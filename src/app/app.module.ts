@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MenuBlockComponent } from './shared/menu-block/menu-block.component';
+import { ClientsPageComponent } from './clients-page/clients-page.component';
+import { TitleComponent } from './shared/title/title.component';
+import { FormsModule } from '@angular/forms';
+import { SmallBlockComponent } from './shared/small-block/small-block.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuBlockComponent,
+    ClientsPageComponent,
+    TitleComponent,
+    SmallBlockComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
