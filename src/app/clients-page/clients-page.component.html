@@ -1,7 +1,8 @@
 <div class="client">
     <app-title [title]="title"></app-title>
     <div *ngFor="let client of clients">
+        <a [routerLink]="['/clients', client.id]">
         <app-small-block [FirstName]="client.FirstName" [LastName]="client.LastName"
-            [MiddleName]="client.MiddleName" [phone]="client.Phone"[email]="client.Email"></app-small-block>
+            [MiddleName]="client.MiddleName" [phone]="client.Phone"[email]="client.Email"></app-small-block></a>
     </div>
 </div>

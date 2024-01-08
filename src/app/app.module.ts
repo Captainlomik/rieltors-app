@@ -9,6 +9,7 @@ import { ClientsPageComponent } from './clients-page/clients-page.component';
 import { TitleComponent } from './shared/title/title.component';
 import { FormsModule } from '@angular/forms';
 import { SmallBlockComponent } from './shared/small-block/small-block.component';
+import { ClientDetailPageComponent } from './client-detail-page/client-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SmallBlockComponent } from './shared/small-block/small-block.component'
     MenuBlockComponent,
     ClientsPageComponent,
     TitleComponent,
-    SmallBlockComponent
+    SmallBlockComponent,
+    ClientDetailPageComponent
   ],
   imports: [
     BrowserModule,

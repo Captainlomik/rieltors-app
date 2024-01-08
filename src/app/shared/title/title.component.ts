@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class TitleComponent {
-  @Input() title = 'lol'
+  @Input() title: string | undefined | number = ''
 
 }
