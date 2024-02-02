@@ -1,7 +1,13 @@
 <div class="block">
-    <div class="block__info">
-      <p class="block__info-name">{{FirstName}} {{MiddleName}} {{LastName}}</p>
-      <p class="block__info-email">{{email}}</p>
-      <p class="block__info-phone">{{phone}}</p>
+  <div class="block-wrap">
+    <a class="block__info"[routerLink]="['/clients', client!.id]">
+        <p class="block__info-name">{{client?.FirstName}} {{client?.MiddleName}} {{client?.LastName}}</p>
+        <p class="block__info-email">{{client?.Email}}</p>
+        <p class="block__info-phone">{{client?.Phone}}</p>
+    </a>
+    <div class="block__btns">
+      <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Pencil.png" alt="edit" (click)="openPopup()"></button>
+      <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Trash.png" alt="delete" (click)="delPerson(client!)"></button>
     </div>
+  </div>
 </div>

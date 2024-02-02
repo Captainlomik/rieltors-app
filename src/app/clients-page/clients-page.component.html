@@ -1,8 +1,10 @@
 <div class="client">
     <app-title [title]="title"></app-title>
-    <div *ngFor="let client of clients">
-        <a [routerLink]="['/clients', client.id]">
-        <app-small-block [FirstName]="client.FirstName" [LastName]="client.LastName"
-            [MiddleName]="client.MiddleName" [phone]="client.Phone"[email]="client.Email"></app-small-block></a>
+    <div class="btn-wrap">
+        <button class="btn" mat-raised-button color="primary" (click)="openPopup()"> Создать</button>
     </div>
-</div>
+
+        <div *ngFor="let client of clients$ | async">
+            <app-small-block [client]="client"></app-small-block>
+        </div>
+    </div>

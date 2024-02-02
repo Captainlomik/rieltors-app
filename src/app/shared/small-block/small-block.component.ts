@@ -1,4 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { Client } from '../interface';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
+import { ClientService } from '../services/client.service';
 
 @Component({
   selector: 'app-small-block',
@@ -6,11 +10,24 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./small-block.component.scss']
 })
 export class SmallBlockComponent {
-  @Input() FirstName: string| undefined = ''
-  @Input() MiddleName: string | undefined = ''
-  @Input() LastName: string | undefined = ''
-  @Input() email: string | undefined = ''
-  @Input() phone: string | undefined = ''
+  @Input() client: Client | undefined
+
+  constructor(private dialog: MatDialog, public clientService: ClientService) { }
+
+  ngOnInit() {
+  }
+
+  openPopup() {
+    this.dialog.open(PopupComponent, {
+      data: this.client
+    })
+  }
+
+  delPerson(client: Client) {
+    this.clientService.delete(client.id).subscribe(el => {
+      console.log('delete')
+    })
+  }
 
 
 }

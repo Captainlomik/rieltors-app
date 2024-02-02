@@ -1,12 +1,28 @@
 {
-    "clients": [
-        {
-            "id": 1,
-            "FirstName": "Иванов",
-            "MiddleName": "Иван",
-            "LastName": "Иванович",
-            "Phone": "8 985 782 95 58",
-            "Email": "vanusha123@mail.ru"
-        }
-    ]
+  "clients": [
+    {
+      "FirstName": "Иванов",
+      "MiddleName": "Иван",
+      "LastName": "Иван12",
+      "Phone": "8 985 782 95 58",
+      "Email": "vanusha123@mail.ru",
+      "id": 1
+    },
+    {
+      "FirstName": "Петрова",
+      "MiddleName": "Настя",
+      "LastName": "Настя",
+      "Phone": "89857820558",
+      "Email": "nastiy@mail.ru",
+      "id": 3
+    },
+    {
+      "FirstName": "Илья",
+      "MiddleName": "Белов ",
+      "LastName": "Викторович",
+      "Phone": "8 982 43 23",
+      "Email": "nastiy248@mail.ru",
+      "id": 4
+    }
+  ]
 }

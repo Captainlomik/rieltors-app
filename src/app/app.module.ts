@@ -7,9 +7,12 @@ import { AppComponent } from './app.component';
 import { MenuBlockComponent } from './shared/menu-block/menu-block.component';
 import { ClientsPageComponent } from './clients-page/clients-page.component';
 import { TitleComponent } from './shared/title/title.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SmallBlockComponent } from './shared/small-block/small-block.component';
 import { ClientDetailPageComponent } from './client-detail-page/client-detail-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PopupComponent } from './shared/popup/popup.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { ClientDetailPageComponent } from './client-detail-page/client-detail-pa
     ClientsPageComponent,
     TitleComponent,
     SmallBlockComponent,
-    ClientDetailPageComponent
+    ClientDetailPageComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

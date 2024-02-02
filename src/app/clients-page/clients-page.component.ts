@@ -1,22 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ClientService } from '../shared/services/client.service';
 import { Client } from '../shared/interface';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { PopupComponent } from '../shared/popup/popup.component';
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-clients-page',
   templateUrl: './clients-page.component.html',
-  styleUrls: ['./clients-page.component.scss']
+  styleUrls: ['./clients-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ClientsPageComponent implements OnInit {
   title = "Клиенты"
-  clients: Client[] = []
+  clients$: Observable<Client[]> | undefined
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.clientService.get().subscribe(el=> this.clients = el )
+    this.clients$ = this.clientService.get()
   }
 
+  openPopup() {
+    this.dialog.open(PopupComponent, {
+    })
+  }
 
 }
