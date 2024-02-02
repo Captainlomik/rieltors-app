@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ClientService } from '../services/client.service';
 import { Client } from '../interface';
+import { AlertService } from '../services/alert.service';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class PopupComponent implements OnInit {
   constructor(
     private ref: MatDialogRef<PopupComponent>,
     private clientService: ClientService,
+    private alert: AlertService,
     @Inject(MAT_DIALOG_DATA) public data: Client) {
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>(''),
@@ -43,16 +45,21 @@ export class PopupComponent implements OnInit {
   }
 
 
-  Saveuser() {
-    this.clientService.post(this.clientForm.value).subscribe(
-      res => this.closepopup()
-    )
+  saveUser() {
+    this.clientService.post(this.clientForm.value).subscribe({
+      next: () => this.closepopup(), 
+      complete: () => this.alert.success('Пользователь добавлен')
+
+    })
   }
 
   editUser() {
     this.clientService.put(this.clientForm.value, this.data.id).subscribe({
       next: el => console.log(el),
-      complete: () => this.closepopup()
+      complete: () => {
+        this.closepopup()
+        this.alert.success('Данные изменены')
+      }
     })
   }
 }

@@ -3,6 +3,7 @@ import { Client } from '../interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { ClientService } from '../services/client.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-small-block',
@@ -12,10 +13,12 @@ import { ClientService } from '../services/client.service';
 export class SmallBlockComponent {
   @Input() client: Client | undefined
 
-  constructor(private dialog: MatDialog, public clientService: ClientService) { }
+  constructor(private dialog: MatDialog,
+     public clientService: ClientService,
+     public alert: AlertService ) { }
 
   ngOnInit() {
-  }
+  } 
 
   openPopup() {
     this.dialog.open(PopupComponent, {
@@ -25,7 +28,7 @@ export class SmallBlockComponent {
 
   delPerson(client: Client) {
     this.clientService.delete(client.id).subscribe(el => {
-      console.log('delete')
+      this.alert.warning('Пользователь удален')
     })
   }
 
