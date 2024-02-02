@@ -13,6 +13,8 @@ import { ClientDetailPageComponent } from './client-detail-page/client-detail-pa
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupComponent } from './shared/popup/popup.component';
 import { MaterialModule } from './material.module';
+import { AlertComponent } from './shared/alert/alert.component';
+import { AlertService } from './shared/services/alert.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { MaterialModule } from './material.module';
     SmallBlockComponent,
     ClientDetailPageComponent,
     PopupComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { MaterialModule } from './material.module';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

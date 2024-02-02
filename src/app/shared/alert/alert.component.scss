@@ -1,0 +1,17 @@
+.alert {
+    &__wrap {
+        position: fixed;
+        top: 50px;
+        right: 40px;
+        max-width: 600px;
+        background-color: #FBFCFC;
+        -webkit-box-shadow: 5px 3px 19px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 5px 3px 19px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 3px 19px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &__text {
+        padding: 15px 40px;
+    }
+
+}
