@@ -15,6 +15,7 @@ import { Observable } from 'rxjs';
 export class ClientsPageComponent implements OnInit {
   title = "Клиенты"
   clients$: Observable<Client[]> | undefined
+  search = '';
 
   constructor(private clientService: ClientService, private dialog: MatDialog) { }
 

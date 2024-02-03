@@ -15,6 +15,7 @@ import { PopupComponent } from './shared/popup/popup.component';
 import { MaterialModule } from './material.module';
 import { AlertComponent } from './shared/alert/alert.component';
 import { AlertService } from './shared/services/alert.service';
+import { SearchPipe } from './shared/pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AlertService } from './shared/services/alert.service';
     SmallBlockComponent,
     ClientDetailPageComponent,
     PopupComponent,
-    AlertComponent
+    AlertComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
