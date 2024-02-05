@@ -1,4 +1,5 @@
 <div *ngIf="client$ | async as client">
     <app-title [title]="client.FirstName"></app-title>
     <h2>{{client.Phone}}</h2>
+    <button (click)="goBack()">go back</button>
 </div>

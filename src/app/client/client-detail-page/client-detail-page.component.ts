@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { ClientService } from '../../shared/services/client.service';
 import { Observable, switchMap } from 'rxjs';
 import { Client } from '../../shared/interface';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-client-detail-page',
@@ -14,13 +15,15 @@ export class ClientDetailPageComponent implements OnInit {
   param!: number
   client$!: Observable<Client>
 
-  constructor(private route: ActivatedRoute, private clientService: ClientService) { }
+  constructor(private route: ActivatedRoute, private clientService: ClientService,  private location: Location) { }
   ngOnInit(): void {
-    this.client$ = this.route.params.pipe(switchMap((params:Params)=>{
+    this.client$ = this.route.params.pipe(switchMap((params: Params) => {
       this.param = params['id']
       return this.clientService.get_byId(params['id'])
     }))
-
   }
-
+  
+  goBack(): void {
+    this.location.back();
+  }
 }

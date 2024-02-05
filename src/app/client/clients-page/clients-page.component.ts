@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnChanges, OnInit } from '@angular/core';
 import { ClientService } from '../../shared/services/client.service';
 import { Client } from '../../shared/interface';
-import { MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./clients-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ClientsPageComponent implements OnInit {
+export class ClientsPageComponent implements OnInit, OnChanges {
   title = "Клиенты"
   clients$: Observable<Client[]> | undefined
   search = '';
@@ -22,6 +22,11 @@ export class ClientsPageComponent implements OnInit {
   ngOnInit() {
     this.clients$ = this.clientService.get()
   }
+
+  ngOnChanges(){
+    this.clients$ = this.clientService.get()
+  }
+
 
   openPopup() {
     this.dialog.open(PopupComponent, {
