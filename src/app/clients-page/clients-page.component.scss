@@ -1,5 +1,11 @@
-.btn-wrap{
+.client__btn-wrap{
    width: 100%;
    display: flex;
    justify-content: space-between;
+}
+
+.client{
+   &__search{
+      width: 50%;
+   }
 }
