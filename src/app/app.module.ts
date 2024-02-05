@@ -19,6 +19,8 @@ import { SearchPipe } from './shared/pipe/search.pipe';
 import { RieltorsPageComponent } from './rieltor/rieltors-page/rieltors-page.component';
 import { RieltorDetailPageComponent } from './rieltor/rieltors-detail-page/rieltor-detail-page.component';
 import { CreatePopupComponent } from './rieltor/create-popup/create-popup.component';
+import { SmallBlockRieltorComponent } from './rieltor/small-block/small-block.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { CreatePopupComponent } from './rieltor/create-popup/create-popup.compon
     RieltorsPageComponent,
     RieltorDetailPageComponent, 
     CreatePopupComponent, 
-    SmallBlockComponent
+    SmallBlockRieltorComponent
   ],
   imports: [
     BrowserModule,
