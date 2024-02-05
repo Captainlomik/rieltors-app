@@ -7,7 +7,7 @@ export interface Client{
     Email?:string
 }
 
-export interface Agent{
+export interface Rieltor{
     id: number, 
     FirstName?: string, 
     MiddleName?:string, 

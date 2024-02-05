@@ -1,0 +1,16 @@
+<div class="rieltor">
+    <app-title [title]="title"></app-title>
+    <div class="rieltor__btn-wrap">
+        <mat-form-field class="rieltor__search">
+            <input matInput type="text" [(ngModel)]="search" placeholder="Поиск">
+            <button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <!-- <button class="rieltor__btn" mat-raised-button color="primary" (click)="openPopup()"> Создать</button> -->
+    </div>
+
+    <!-- <div *ngFor="let client of (clients$ | async )| searchPeople:search"> -->
+        <!-- <app-small-block [client]="client"></app-small-block> -->
+    <!-- </div> -->
+</div>
