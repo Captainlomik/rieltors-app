@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ClientService } from '../shared/services/client.service';
+import { ClientService } from '../../shared/services/client.service';
 import { Observable, switchMap } from 'rxjs';
-import { Client } from '../shared/interface';
+import { Client } from '../../shared/interface';
 
 @Component({
   selector: 'app-client-detail-page',

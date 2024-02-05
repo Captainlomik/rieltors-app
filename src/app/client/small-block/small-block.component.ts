@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Client } from '../interface';
+import { Client } from '../../shared/interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
-import { ClientService } from '../services/client.service';
-import { AlertService } from '../services/alert.service';
+import { ClientService } from '../../shared/services/client.service';
+import { AlertService } from '../../shared/services/alert.service';
 
 @Component({
   selector: 'app-small-block',

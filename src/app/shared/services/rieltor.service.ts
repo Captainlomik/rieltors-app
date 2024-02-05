@@ -7,5 +7,5 @@ import { Rieltor } from '../interface';
 })
 export class RieltorService extends BaseService<Rieltor> {
 
-  protected override url?: string | undefined = 'rieltor'
+  protected override url?: string | undefined = 'rieltors'
 }

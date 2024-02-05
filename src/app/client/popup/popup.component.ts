@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ClientService } from '../services/client.service';
-import { Client } from '../interface';
-import { AlertService } from '../services/alert.service';
+import { ClientService } from '../../shared/services/client.service';
+import { Client } from '../../shared/interface';
+import { AlertService } from '../../shared/services/alert.service';
 
 
 @Component({

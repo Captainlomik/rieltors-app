@@ -9,20 +9,21 @@
       "id": 1
     },
     {
-      "FirstName": "Петрова",
-      "MiddleName": "Настя",
-      "LastName": "Настя",
-      "Phone": "89857820558",
-      "Email": "nastiy@mail.ru",
-      "id": 3
-    },
-    {
       "FirstName": "Илья",
       "MiddleName": "Белов ",
       "LastName": "Викторович",
       "Phone": "8 982 43 23",
       "Email": "nastiy248@mail.ru",
       "id": 4
+    }
+  ],
+  "rieltors": [
+    {
+      "FirstName": "d",
+      "MiddleName": "d",
+      "LastName": "s",
+      "DealShare": "10",
+      "id": 1
     }
   ]
 }

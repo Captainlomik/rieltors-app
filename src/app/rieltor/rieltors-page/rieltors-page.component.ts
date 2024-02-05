@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Rieltor } from '../shared/interface';
+import { Rieltor } from '../../shared/interface';
 import { Observable } from 'rxjs';
-import { RieltorService } from '../shared/services/rieltor.service';
+import { RieltorService } from '../../shared/services/rieltor.service';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from '../shared/popup/popup.component';
+import { CreatePopupComponent } from '../create-popup/create-popup.component';
 
 @Component({
   selector: 'app-rieltors-page',
@@ -22,7 +22,7 @@ export class RieltorsPageComponent {
   }
 
   openPopup() {
-    this.dialog.open(PopupComponent, {
+    this.dialog.open(CreatePopupComponent, {
     })
   }
 

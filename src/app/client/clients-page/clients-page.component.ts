@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ClientService } from '../shared/services/client.service';
-import { Client } from '../shared/interface';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { PopupComponent } from '../shared/popup/popup.component';
+import { ClientService } from '../../shared/services/client.service';
+import { Client } from '../../shared/interface';
+import { MatDialog} from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 import { Observable } from 'rxjs';
 
 

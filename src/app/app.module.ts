@@ -5,17 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuBlockComponent } from './shared/menu-block/menu-block.component';
-import { ClientsPageComponent } from './clients-page/clients-page.component';
+import { ClientsPageComponent } from './client/clients-page/clients-page.component';
 import { TitleComponent } from './shared/title/title.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SmallBlockComponent } from './shared/small-block/small-block.component';
-import { ClientDetailPageComponent } from './client-detail-page/client-detail-page.component';
+import { SmallBlockComponent } from './client/small-block/small-block.component';
+import { ClientDetailPageComponent } from './client/client-detail-page/client-detail-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PopupComponent } from './shared/popup/popup.component';
+import { PopupComponent } from './client/popup/popup.component';
 import { MaterialModule } from './material.module';
 import { AlertComponent } from './shared/alert/alert.component';
 import { AlertService } from './shared/services/alert.service';
 import { SearchPipe } from './shared/pipe/search.pipe';
+import { RieltorsPageComponent } from './rieltor/rieltors-page/rieltors-page.component';
+import { RieltorDetailPageComponent } from './rieltor/rieltors-detail-page/rieltor-detail-page.component';
+import { CreatePopupComponent } from './rieltor/create-popup/create-popup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,11 @@ import { SearchPipe } from './shared/pipe/search.pipe';
     ClientDetailPageComponent,
     PopupComponent,
     AlertComponent,
-    SearchPipe
+    SearchPipe, 
+    RieltorsPageComponent,
+    RieltorDetailPageComponent, 
+    CreatePopupComponent, 
+    SmallBlockComponent
   ],
   imports: [
     BrowserModule,
