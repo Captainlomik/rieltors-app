@@ -11,7 +11,6 @@
     </div>
 
     <div *ngFor="let rieltor of (rieltors$ | async )">
-        <!-- <app-small-block [client]="client"></app-small-block> -->
-        {{rieltor.DealShare}}
+        <app-small-rieltor [rieltor]="rieltor"></app-small-rieltor>
     </div>
 </div>
