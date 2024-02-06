@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ClientService } from '../../shared/services/client.service';
@@ -47,8 +47,10 @@ export class PopupComponent implements OnInit {
 
   saveUser() {
     this.clientService.post(this.clientForm.value).subscribe({
-      next: () => this.closepopup(), 
-      complete: () => this.alert.success('Пользователь добавлен')
+      next: () => this.closepopup(),
+      complete: () => {
+        this.alert.success('Пользователь добавлен')
+      }
 
     })
   }
