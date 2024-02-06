@@ -4,6 +4,7 @@ import { ClientsPageComponent } from './client/clients-page/clients-page.compone
 import { ClientDetailPageComponent } from './client/client-detail-page/client-detail-page.component';
 import { RieltorsPageComponent } from './rieltor/rieltors-page/rieltors-page.component';
 import { RieltorDetailPageComponent } from './rieltor/rieltors-detail-page/rieltor-detail-page.component';
+import { SalePageComponent } from './sale/sale-page/sale-page.component';
 
 const routes: Routes = [
   { path: 'clients', component: ClientsPageComponent },
@@ -11,6 +12,8 @@ const routes: Routes = [
 
   { path: 'rieltors', component: RieltorsPageComponent },
   { path: 'rieltor/:id', component: RieltorDetailPageComponent },
+
+  { path: 'sale', component: SalePageComponent }
 
 
 ];
