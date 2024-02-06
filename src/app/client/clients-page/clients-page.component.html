@@ -11,6 +11,6 @@
     </div>
 
     <div *ngFor="let client of (clients$ | async )| searchPeople:search">
-        <app-small-block [client]="client"></app-small-block>
+        <app-small-block [client]="client" (updateClients)=getClietns()></app-small-block>
     </div>
 </div>

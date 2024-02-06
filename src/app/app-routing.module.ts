@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'clients/:id', component: ClientDetailPageComponent },
 
   { path: 'rieltors', component: RieltorsPageComponent },
-  { path: 'rieltors/:id', component: RieltorDetailPageComponent },
+  { path: 'rieltor/:id', component: RieltorDetailPageComponent },
 
 
 ];

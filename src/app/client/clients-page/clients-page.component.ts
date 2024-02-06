@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./clients-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ClientsPageComponent implements OnInit, OnChanges {
+export class ClientsPageComponent implements OnInit {
   title = "Клиенты"
   clients$: Observable<Client[]> | undefined
   search = '';
@@ -20,13 +20,12 @@ export class ClientsPageComponent implements OnInit, OnChanges {
   constructor(private clientService: ClientService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.clients$ = this.clientService.get()
+    this.getClietns()
   }
 
-  ngOnChanges(){
+  getClietns() {
     this.clients$ = this.clientService.get()
   }
-
 
   openPopup() {
     this.dialog.open(PopupComponent, {

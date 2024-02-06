@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from '../../shared/interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
@@ -12,6 +12,7 @@ import { AlertService } from '../../shared/services/alert.service';
 })
 export class SmallBlockComponent {
   @Input() client: Client | undefined
+  @Output() updateClients = new EventEmitter()
 
   constructor(private dialog: MatDialog,
      public clientService: ClientService,
@@ -28,9 +29,10 @@ export class SmallBlockComponent {
 
   delPerson(client: Client) {
     this.clientService.delete(client.id).subscribe(el => {
-      this.alert.warning('Пользователь удален')
+     this.updateClients.emit() 
+     this.alert.warning('Пользователь удален')
     })
   }
-
+  
 
 }
