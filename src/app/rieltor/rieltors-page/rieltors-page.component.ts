@@ -18,7 +18,7 @@ export class RieltorsPageComponent {
   constructor(private rieltorService: RieltorService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.rieltors$ = this.rieltorService.get()
+    this.getRieltors()
   }
 
   openPopup() {
@@ -26,5 +26,8 @@ export class RieltorsPageComponent {
     })
   }
 
+  getRieltors() {
+    this.rieltors$ = this.rieltorService.get()
+  }
 
 }

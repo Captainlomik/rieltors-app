@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Rieltor } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
@@ -12,13 +12,14 @@ import { CreatePopupComponent } from '../create-popup/create-popup.component';
 })
 export class SmallBlockRieltorComponent {
   @Input() rieltor: Rieltor | undefined
+  @Output() getRieltors = new EventEmitter()
 
   constructor(private dialog: MatDialog,
-     public rieltorService: RieltorService,
-     public alert: AlertService ) { }
+    public rieltorService: RieltorService,
+    public alert: AlertService) { }
 
   ngOnInit() {
-  } 
+  }
 
   openPopup() {
     this.dialog.open(CreatePopupComponent, {
@@ -28,6 +29,7 @@ export class SmallBlockRieltorComponent {
 
   delPerson(rieltor: Rieltor) {
     this.rieltorService.delete(rieltor.id).subscribe(el => {
+      this.getRieltors.emit()
       this.alert.warning('Риелтор удален')
     })
   }

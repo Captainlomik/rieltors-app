@@ -11,6 +11,6 @@
     </div>
 
     <div *ngFor="let rieltor of (rieltors$ | async )">
-        <app-small-rieltor [rieltor]="rieltor"></app-small-rieltor>
+        <app-small-rieltor [rieltor]="rieltor" (getRieltors)="getRieltors()"></app-small-rieltor>
     </div>
 </div>
