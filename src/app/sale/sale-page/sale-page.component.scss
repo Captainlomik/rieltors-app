@@ -1,0 +1,72 @@
+.sale {
+    &__client {
+        &-form {
+            width: 100%;
+        }
+
+        &-title {
+            margin-bottom: 10px
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__input {
+        &-wrap {
+            width: 30%;
+            margin-right: 30px;
+        }
+
+        &-wrap:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.card {
+    margin-bottom: 40px;
+    height: 500px;
+}
+
+.tab__content {
+    padding-top: 30px;
+    height: 400px
+}
+
+mat-tab {
+    height: 400px;
+}
+
+
+// .input__block-small {
+//     width: 50%;
+// }
+
+// .sale__input-small {
+//     width: 32%;
+//     margin-right: 5px;
+//     max-width: 310px;
+
+// }
+
+// .sale__input-small:last-child {
+//     margin-right: 0;
+// }
+
+// .line {
+//     width: 60%;
+//     display: flex;
+//     justify-content: space-between;
+// }
+.inputs-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs-form{
+    width: 70%;
+}
