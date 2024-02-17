@@ -18,11 +18,21 @@
     &__input {
         &-wrap {
             width: 30%;
-            margin-right: 30px;
+            padding-right: 30px;
         }
+    }
 
-        &-wrap:last-child {
-            margin-right: 0;
+    &__input2 {
+        &-wrap {
+            width: 50%;
+            padding-right: 30px;
+        }
+    }
+
+    &__input1 {
+        &-wrap {
+            width: 100%;
+            padding-right: 30px;
         }
     }
 }
@@ -41,32 +51,50 @@ mat-tab {
     height: 400px;
 }
 
+.sale__input-small {
+    width: 32%;
+    margin-right: 5px;
+    max-width: 310px;
 
-// .input__block-small {
-//     width: 50%;
-// }
+}
 
-// .sale__input-small {
-//     width: 32%;
-//     margin-right: 5px;
-//     max-width: 310px;
 
-// }
-
-// .sale__input-small:last-child {
-//     margin-right: 0;
-// }
-
-// .line {
-//     width: 60%;
-//     display: flex;
-//     justify-content: space-between;
-// }
-.inputs-wrap{
+.inputs-wrap {
     display: flex;
     justify-content: space-between;
 }
 
-.inputs-form{
-    width: 70%;
+.inputs-form {
+    width: 65%;
+    margin-right: 30px;
 }
+
+.map {
+    width: 35%;
+}
+
+.line {
+    width: 100%;
+
+    &-small {
+        display: flex;
+        width: 100%;
+    }
+}
+
+.input__block-small {
+    width: 50%;
+    display: flex;
+    padding-right: 30px;
+}
+
+.input__block-small>.sale__input2-wrap:last-child {
+    padding-right: 0;
+}
+
+.btns-wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
