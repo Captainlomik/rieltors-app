@@ -42,3 +42,11 @@ export interface Flat extends Object {
 export interface Land extends Object {
     square: number
 }
+
+export interface Offer {
+    id?: number,
+    clientId: number,
+    ObjectId: number,
+    rieltorId: number,
+    price: number
+}

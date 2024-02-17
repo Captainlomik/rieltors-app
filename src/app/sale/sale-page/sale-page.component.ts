@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Client, Flat, House, Land } from 'src/app/shared/interface';
+import { Client, Flat, House, Land, Rieltor } from 'src/app/shared/interface';
 import { ClientService } from 'src/app/shared/services/client.service';
 import { ObjectService } from 'src/app/shared/services/object.service';
+import { OffersService } from 'src/app/shared/services/offers.service';
+import { RieltorService } from 'src/app/shared/services/rieltor.service';
 
 
 @Component({
@@ -23,10 +25,16 @@ export class SalePageComponent {
   addObjectFlag: boolean = false
   client: Client | undefined
   object: Flat | House | Land | undefined
+  rielters: Rieltor[] | undefined
+
+  selectedRieltor: any
+  price: number = 0
 
 
   constructor(private clientService: ClientService,
-    private objectService: ObjectService) {
+    private objectService: ObjectService,
+    private rielterService: RieltorService,
+    private offerService: OffersService) {
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>('', Validators.required),
       "MiddleName": new FormControl<string>('', Validators.required),
@@ -72,16 +80,17 @@ export class SalePageComponent {
   }
 
   getInfo() {
-    if (!this.addClientFlag) {
+    if (this.addClientFlag) {
       this.clientService.get_byId(this.clientId).subscribe(
         el => { this.client = el }
       )
     }
-    if(!this.addObjectFlag){
+    if (this.addObjectFlag) {
       this.objectService.get_byId(this.objectId).subscribe(
         el => { this.object = el }
       )
     }
+    this.getRieltors()
   }
 
   addObject() {
@@ -93,4 +102,25 @@ export class SalePageComponent {
       }
     )
   }
+
+  getRieltors() {
+    this.rielterService.get().subscribe(
+      el => {
+        this.rielters = el
+
+      }
+    )
+  }
+
+  createOffers() {
+    this.offerService.post({
+      clientId: this.clientId,
+      ObjectId: this.objectId,
+      rieltorId: this.selectedRieltor.id,
+      price: this.price
+    }).subscribe(
+      el=> console.log('create new offer')
+    )
+  }
+
 }

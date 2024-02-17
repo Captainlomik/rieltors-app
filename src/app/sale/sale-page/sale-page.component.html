@@ -178,13 +178,22 @@
                 <p>{{object.latitude}}</p>
                 <p>{{object.longitude}}</p>
               </div>
+
+              <mat-form-field  >
+                <mat-label>Риелторы</mat-label>
+                <mat-select [(ngModel)]="selectedRieltor">
+                  <ng-container  *ngFor="let rielter of rielters">
+                    <mat-option  [value]="rielter.id">{{rielter.FirstName}}{{rielter.LastName}}</mat-option>
+                  </ng-container>
+                </mat-select>
+              </mat-form-field>
               <mat-form-field class="sale__input-wrap">
                 <mat-label>Стоимость</mat-label>
-                <input matInput placeholder="">
+                <input matInput [(ngModel)]="price">
               </mat-form-field>
 
               <button mat-flat-button (click)="previous(index1)">Назад</button>
-              <button mat-flat-button color="primary" (click)="next(index1)">Создать</button>
+              <button mat-flat-button color="primary" (click)="createOffers()">Создать</button>
             </div>
           </mat-tab>
         </div>
