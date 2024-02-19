@@ -15,15 +15,168 @@
       "Phone": "8 982 43 23",
       "Email": "nastiy248@mail.ru",
       "id": 4
+    },
+    {
+      "FirstName": "Иванов",
+      "MiddleName": "Иван ",
+      "LastName": "Сергеевич",
+      "Phone": "8 985 782 43 23",
+      "Email": "nastiy248@mail.ru",
+      "id": 5
+    },
+    {
+      "FirstName": "ff",
+      "MiddleName": "ff",
+      "LastName": "ff",
+      "Phone": "8985 738 234 12",
+      "Email": "nfdf248@mail.ru",
+      "id": 6
+    },
+    {
+      "FirstName": "Ебанько",
+      "MiddleName": "Илья",
+      "LastName": "Иларионович",
+      "Phone": "8 79234234",
+      "Email": "tesd@mail.ru",
+      "id": 8
+    },
+    {
+      "FirstName": "hjddf",
+      "MiddleName": "dfd",
+      "LastName": "dfdf",
+      "Phone": "3243434",
+      "Email": "test@mail.ru",
+      "id": 9
+    },
+    {
+      "FirstName": "ыыы",
+      "MiddleName": "ыы",
+      "LastName": "",
+      "Phone": "",
+      "Email": "tes@mail.ru",
+      "id": 10
+    },
+    {
+      "FirstName": "dfdd",
+      "MiddleName": "df",
+      "LastName": "df",
+      "Phone": "",
+      "Email": "dfd@mail.ru",
+      "id": 11
+    },
+    {
+      "FirstName": "ЛОмаамам",
+      "MiddleName": "амама",
+      "LastName": "",
+      "Phone": "",
+      "Email": "nasd@mail.ru",
+      "id": 12
+    },
+    {
+      "FirstName": "sdds",
+      "MiddleName": "sd",
+      "LastName": "",
+      "Phone": "",
+      "Email": "sd@sdf",
+      "id": 13
+    },
+    {
+      "FirstName": "Белюков",
+      "MiddleName": "Илья",
+      "LastName": "",
+      "Phone": "",
+      "Email": "nasti@mai.ru",
+      "id": 14
+    },
+    {
+      "FirstName": "Иванов",
+      "MiddleName": "Иван ",
+      "LastName": "",
+      "Phone": "",
+      "Email": "ivan@mail.ru",
+      "id": 15
     }
   ],
   "rieltors": [
     {
-      "FirstName": "d",
-      "MiddleName": "d",
-      "LastName": "s",
-      "DealShare": "10",
+      "FirstName": "Пупки",
+      "MiddleName": "Залупкин",
+      "LastName": "Иван",
+      "DealShare": "20",
+      "id": 3
+    }
+  ],
+  "objects": [
+    {
+      "city": "rerere",
+      "street": "ereer",
+      "longitude": "323123",
+      "latitude": "232312",
+      "house": "1",
+      "floor": "2",
+      "floors": "10",
+      "rooms": 0,
+      "square": "212",
+      "flat": "23",
+      "frame": "21",
       "id": 1
+    },
+    {
+      "city": "dfdf",
+      "street": "dfdf",
+      "longitude": "234",
+      "latitude": "234234",
+      "house": "1",
+      "floor": "10",
+      "floors": "324",
+      "rooms": 0,
+      "square": "234",
+      "flat": "10",
+      "frame": "11",
+      "id": 2
+    },
+    {
+      "city": "Москва",
+      "street": "лвыв",
+      "longitude": 0,
+      "latitude": "111",
+      "house": 0,
+      "floor": 0,
+      "floors": 0,
+      "rooms": 0,
+      "square": "10",
+      "flat": 0,
+      "frame": 0,
+      "id": 4
+    },
+    {
+      "city": "Мосва",
+      "street": "ываыва",
+      "longitude": 0,
+      "latitude": 0,
+      "house": 0,
+      "floor": 0,
+      "floors": 0,
+      "rooms": 0,
+      "square": 0,
+      "flat": 0,
+      "frame": 0,
+      "id": 5
+    }
+  ],
+  "offers": [
+    {
+      "clientId": 14,
+      "ObjectId": 4,
+      "price": "10000",
+      "id": 1
+    },
+    {
+      "clientId": 15,
+      "objectId": 5,
+      "rieltorId": 3,
+      "price": "123231",
+      "id": 2
     }
   ]
 }
