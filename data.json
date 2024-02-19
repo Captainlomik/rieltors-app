@@ -178,5 +178,6 @@
       "price": "123231",
       "id": 2
     }
-  ]
+  ],
+  "purchaseObjects": []
 }

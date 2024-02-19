@@ -1,1 +1,192 @@
-<p>purchase works!</p>
+<div class="purchase">
+    <app-title [title]="title"></app-title>
+    <mat-card class="card">
+        <mat-card-content>
+            <mat-tab-group [selectedIndex]=select>
+                <div *ngFor="let tab of tabs; let index1 = index">
+                    <mat-tab [label]="tab">
+
+                        <div *ngIf="index1===0" class="tab__content">
+                            <form [formGroup]="clientForm" class="purchase__client-form" (ngSubmit)="addClient()">
+                                <div class="purchase__client-info">
+                                    <mat-form-field class="purchase__input-wrap">
+                                        <mat-label>Фамилия</mat-label>
+                                        <input matInput placeholder="Иванов" formControlName="FirstName">
+                                    </mat-form-field>
+                                    <mat-form-field class="purchase__input-wrap">
+                                        <mat-label>Имя</mat-label>
+                                        <input matInput placeholder="Иван" formControlName="MiddleName">
+                                    </mat-form-field>
+                                    <mat-form-field class="purchase__input-wrap">
+                                        <mat-label>Отчество</mat-label>
+                                        <input matInput placeholder="Иванович" formControlName="LastName">
+                                    </mat-form-field>
+                                    <mat-form-field class="purchase__input-wrap">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput placeholder="email@mail.ru" formControlName="Email">
+                                    </mat-form-field>
+                                    <mat-form-field class="purchase__input-wrap">
+                                        <mat-label>Телефон</mat-label>
+                                        <input matInput placeholder="8 985 782 95 58" formControlName="Phone">
+                                    </mat-form-field>
+                                </div>
+                                <button mat-flat-button color="primary" (click)="next(index1)">Дальше</button>
+                            </form>
+                        </div>
+                        <div *ngIf="index1===1" class=" tab__content">
+                            <div>
+                                <mat-radio-group [(ngModel)]="typeOfHousing">
+                                    <mat-radio-button value="flat">Квартира</mat-radio-button>
+                                    <mat-radio-button value="house">Дом</mat-radio-button>
+                                    <mat-radio-button value="land">Земля</mat-radio-button>
+                                </mat-radio-group>
+
+                                <form [formGroup]="objectForm" (ngSubmit)="addPurchaseObject()">
+                                    <div class="purchase__inputs">
+                                        <mat-form-field class="purchase__input-wrap input__big">
+                                            <mat-label>Желаемый район</mat-label>
+                                            <input matInput formControlName="area">
+                                        </mat-form-field>
+
+                                        <div *ngIf="typeOfHousing==='flat'">
+                                            <div class="line__small">
+                                                <div class="input__block-small">
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Площадь min</mat-label>
+                                                        <input matInput formControlName="squareMin">
+                                                    </mat-form-field>
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Площадь max</mat-label>
+                                                        <input matInput formControlName="squareMax">
+                                                    </mat-form-field>
+                                                </div>
+
+                                                <div class="input__block-small">
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Кол-во комнат min</mat-label>
+                                                        <input matInput formControlName="roomsMin">
+                                                    </mat-form-field>
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Кол-во комнат max</mat-label>
+                                                        <input matInput formControlName="roomsMax">
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="input__block-small">
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Этаж с</mat-label>
+                                                        <input matInput formControlName="floorMin">
+                                                    </mat-form-field>
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Этаж по</mat-label>
+                                                        <input matInput  formControlName="floorMax">
+                                                    </mat-form-field>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div *ngIf="typeOfHousing==='house'">
+
+                                            <div class="line__small">
+                                                <div class="input__block-small">
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Площадь min</mat-label>
+                                                        <input matInput formControlName="squareMin">
+                                                    </mat-form-field>
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Площадь max</mat-label>
+                                                        <input matInput formControlName="squareMax">
+                                                    </mat-form-field>
+                                                </div>
+
+                                                <div class="input__block-small">
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Кол-во комнат min</mat-label>
+                                                        <input matInput formControlName="roomsMin">
+                                                    </mat-form-field>
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Кол-во комнат max</mat-label>
+                                                        <input matInput formControlName="roomsMax">
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="input__block-small">
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Этажность с</mat-label>
+                                                        <input matInput formControlName="floorMin">
+                                                    </mat-form-field>
+                                                    <mat-form-field class="purchase__input-wrap input__big">
+                                                        <mat-label>Этажность по</mat-label>
+                                                        <input matInput formControlName="floorMax">
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div *ngIf="typeOfHousing==='land'">
+                                            <div>
+                                                <mat-form-field class="purchase__input-wrap">
+                                                    <mat-label>Площадь min</mat-label>
+                                                    <input matInput formControlName="squareMin">
+                                                </mat-form-field>
+                                                <mat-form-field class="purchase__input-wrap">
+                                                    <mat-label>Площадь max</mat-label>
+                                                    <input matInput formControlName="squareMax">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="purchase__save">
+                                            <button class="form__btn" mat-flat-button color="primary">Сохранить</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="btns__wrap">
+                                <button mat-flat-button (click)="previous(index1)">Назад</button>
+                                <button mat-flat-button color="primary" (click)="getInfo()"
+                                    (click)="next(index1)">Дальше</button>
+                            </div>
+                        </div>
+                        <div *ngIf="index1===2" class="tab__content" (click)="getRieltors()">
+                            <div *ngIf="client">
+                                <h4>Клиент</h4>
+                                <p>{{client.FirstName}} {{client.MiddleName}} {{client.LastName}}</p>
+                                <p>Телефон: {{client.Email}}</p>
+                                <p>Email:{{client.Phone}}</p>
+                            </div>
+
+                            <div *ngIf="object">
+                                <h4>Объект</h4>
+                               
+                            </div>
+
+                            <div class="offer__inputs">
+                                <mat-form-field class="purchase__input-wrap">
+                                    <mat-label>Риелтор</mat-label>
+                                    <mat-select [(ngModel)]="selectedRieltor">
+                                        <ng-container *ngFor="let rielter of rielters">
+                                            <mat-option
+                                                [value]="rielter.id">{{rielter.FirstName}}{{rielter.LastName}}</mat-option>
+                                        </ng-container>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field class="purchase__input-wrap">
+                                    <mat-label>Стоимость</mat-label>
+                                    <input matInput [(ngModel)]="price">
+                                </mat-form-field>
+                            </div>
+                            <div class="btns__wrap">
+                                <button mat-flat-button (click)="previous(index1)">Назад</button>
+                                <button mat-flat-button color="primary" (click)="createOffers()">Создать</button>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </div>
+
+            </mat-tab-group>
+
+        </mat-card-content>
+    </mat-card>
+</div>

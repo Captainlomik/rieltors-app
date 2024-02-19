@@ -50,3 +50,17 @@ export interface Offer {
     rieltorId: number,
     price: number
 }
+
+export interface PurchaseObject{
+    id:number, 
+    type: ObjectType,
+    area:string,
+    squareMin:number, 
+    squareMax:number, 
+    roomsMin?:number, 
+    roomsMax?:number, 
+    floorMin?:number,
+    floorMax?:number, 
+}
+
+export type ObjectType= 'flat'| 'house' | 'land'
