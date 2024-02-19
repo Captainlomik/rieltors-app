@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Client, Flat, House, Land, Rieltor } from 'src/app/shared/interface';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { ClientService } from 'src/app/shared/services/client.service';
 import { ObjectService } from 'src/app/shared/services/object.service';
 import { OffersService } from 'src/app/shared/services/offers.service';
@@ -34,7 +35,8 @@ export class SalePageComponent {
   constructor(private clientService: ClientService,
     private objectService: ObjectService,
     private rielterService: RieltorService,
-    private offerService: OffersService) {
+    private offerService: OffersService, 
+    private alert:AlertService) {
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>('', Validators.required),
       "MiddleName": new FormControl<string>('', Validators.required),
@@ -115,11 +117,11 @@ export class SalePageComponent {
   createOffers() {
     this.offerService.post({
       clientId: this.clientId,
-      ObjectId: this.objectId,
-      rieltorId: this.selectedRieltor.id,
+      objectId: this.objectId,
+      rieltorId: this.selectedRieltor,
       price: this.price
     }).subscribe(
-      el=> console.log('create new offer')
+      el=> this.alert.success('Добавлено')
     )
   }
 

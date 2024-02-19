@@ -163,35 +163,35 @@
                 <button mat-flat-button color="primary" (click)="getInfo()" (click)="next(index1)">Дальше</button>
               </div>
             </div>
-            <div *ngIf="index1===2" class="tab__content">
+            <div *ngIf="index1===2" class="tab__content" (click)="getRieltors()" >
               <div *ngIf="client">
-                <p>{{client.FirstName}}</p>
-                <p>{{client.MiddleName}}</p>
-                <p>{{client.LastName}}</p>
-                <p>{{client.Email}}</p>
-                <p>{{client.Phone}}</p>
+                <h4>Клиент</h4>
+                <p>{{client.FirstName}} {{client.MiddleName}} {{client.LastName}}</p>
+                <p>Телефон: {{client.Email}}</p>
+                <p>Email:{{client.Phone}}</p>
               </div>
 
               <div *ngIf="object">
+                <h4>Объект</h4>
                 <p>{{object.city}}</p>
                 <p>{{object.street}}</p>
                 <p>{{object.latitude}}</p>
                 <p>{{object.longitude}}</p>
               </div>
-
-              <mat-form-field  >
-                <mat-label>Риелторы</mat-label>
-                <mat-select [(ngModel)]="selectedRieltor">
-                  <ng-container  *ngFor="let rielter of rielters">
-                    <mat-option  [value]="rielter.id">{{rielter.FirstName}}{{rielter.LastName}}</mat-option>
-                  </ng-container>
-                </mat-select>
-              </mat-form-field>
-              <mat-form-field class="sale__input-wrap">
-                <mat-label>Стоимость</mat-label>
-                <input matInput [(ngModel)]="price">
-              </mat-form-field>
-
+              <div class="offer__inputs">
+                <mat-form-field class="sale__input-wrap">
+                  <mat-label>Риелтор</mat-label>
+                  <mat-select [(ngModel)]="selectedRieltor">
+                    <ng-container *ngFor="let rielter of rielters">
+                      <mat-option [value]="rielter.id">{{rielter.FirstName}}{{rielter.LastName}}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="sale__input-wrap" >
+                  <mat-label>Стоимость</mat-label>
+                  <input matInput [(ngModel)]="price">
+                </mat-form-field>
+              </div>
               <button mat-flat-button (click)="previous(index1)">Назад</button>
               <button mat-flat-button color="primary" (click)="createOffers()">Создать</button>
             </div>

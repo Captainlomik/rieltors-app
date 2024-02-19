@@ -46,7 +46,7 @@ export interface Land extends Object {
 export interface Offer {
     id?: number,
     clientId: number,
-    ObjectId: number,
+    objectId: number,
     rieltorId: number,
     price: number
 }

@@ -98,3 +98,11 @@ mat-tab {
     margin-top: 20px;
 }
 
+
+.offer{
+    &__inputs{
+        display: flex;
+        flex-direction: column;
+        width: 100%
+    }
+}
