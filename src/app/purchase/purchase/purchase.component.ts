@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Client, PurchaseObject, Rieltor } from 'src/app/shared/interface';
+import { Client, ObjectType, PurchaseObject, Rieltor } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { ClientService } from 'src/app/shared/services/client.service';
 import { ObjectService } from 'src/app/shared/services/object.service';
@@ -21,9 +21,9 @@ export class PurchaseComponent {
   objectForm: FormGroup
   tabs = ['Пользователь', 'Объект недвижимости', 'Потребность'];
   select = 0
-  typeOfHousing: string = 'flat'
+  typeOfHousing: ObjectType = 'flat'
   clientId: number = 0
-  objectId: number = 0
+  objectId: number | undefined = 0
   addClientFlag: boolean = false
   addObjectFlag: boolean = false
   client: Client | undefined
@@ -85,13 +85,26 @@ export class PurchaseComponent {
       )
     }
     if (this.addObjectFlag) {
-
+      this.purchaseObjectService.get_byId(this.objectId!).subscribe(
+        el => {this.object = el}
+      )
     }
     this.getRieltors()
   }
 
   addPurchaseObject() {
-    this.purchaseObjectService.post(this.objectForm.value).subscribe(
+    this.purchaseObjectService.post({
+      id: undefined,
+      type: this.typeOfHousing,
+      area: this.objectForm.value.area,
+      squareMin: this.objectForm.value.squareMin,
+      squareMax: this.objectForm.value.squareMax,
+      roomsMin: this.objectForm.value.roomsMin,
+      roomsMax: this.objectForm.value.roomsMax,
+      floorMin: this.objectForm.value.floorMin,
+      floorMax: this.objectForm.value.floorMax,
+    }
+    ).subscribe(
       el => {
         this.objectId = el.id;
         this.addObjectFlag = true
