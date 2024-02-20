@@ -22,6 +22,7 @@ import { CreatePopupComponent } from './rieltor/create-popup/create-popup.compon
 import { SmallBlockRieltorComponent } from './rieltor/small-block/small-block.component';
 import { SalePageComponent } from './sale/sale-page/sale-page.component';
 import { PurchaseComponent } from './purchase/purchase/purchase.component';
+import { PurchaseListComponent } from './purchase/purchase-list/purchase-list.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PurchaseComponent } from './purchase/purchase/purchase.component';
     CreatePopupComponent, 
     SmallBlockRieltorComponent,
     SalePageComponent, 
-    PurchaseComponent
+    PurchaseComponent,
+    PurchaseListComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { RieltorsPageComponent } from './rieltor/rieltors-page/rieltors-page.com
 import { RieltorDetailPageComponent } from './rieltor/rieltors-detail-page/rieltor-detail-page.component';
 import { SalePageComponent } from './sale/sale-page/sale-page.component';
 import { PurchaseComponent } from './purchase/purchase/purchase.component';
+import { PurchaseListComponent } from './purchase/purchase-list/purchase-list.component';
 
 const routes: Routes = [
   { path: 'clients', component: ClientsPageComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'rieltor/:id', component: RieltorDetailPageComponent },
 
   { path: 'sale', component: SalePageComponent },
-  { path: 'purchase', component: PurchaseComponent }
+  { path: 'purchase', component: PurchaseComponent },
+  { path: 'purchases', component:PurchaseListComponent }
 
 
 ];
