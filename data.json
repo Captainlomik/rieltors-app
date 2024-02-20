@@ -25,36 +25,12 @@
       "id": 5
     },
     {
-      "FirstName": "ff",
-      "MiddleName": "ff",
-      "LastName": "ff",
-      "Phone": "8985 738 234 12",
-      "Email": "nfdf248@mail.ru",
-      "id": 6
-    },
-    {
       "FirstName": "Ебанько",
       "MiddleName": "Илья",
       "LastName": "Иларионович",
       "Phone": "8 79234234",
       "Email": "tesd@mail.ru",
       "id": 8
-    },
-    {
-      "FirstName": "hjddf",
-      "MiddleName": "dfd",
-      "LastName": "dfdf",
-      "Phone": "3243434",
-      "Email": "test@mail.ru",
-      "id": 9
-    },
-    {
-      "FirstName": "ыыы",
-      "MiddleName": "ыы",
-      "LastName": "",
-      "Phone": "",
-      "Email": "tes@mail.ru",
-      "id": 10
     },
     {
       "FirstName": "dfdd",
@@ -71,14 +47,6 @@
       "Phone": "",
       "Email": "nasd@mail.ru",
       "id": 12
-    },
-    {
-      "FirstName": "sdds",
-      "MiddleName": "sd",
-      "LastName": "",
-      "Phone": "",
-      "Email": "sd@sdf",
-      "id": 13
     },
     {
       "FirstName": "Белюков",
@@ -99,11 +67,18 @@
   ],
   "rieltors": [
     {
-      "FirstName": "Пупки",
-      "MiddleName": "Залупкин",
-      "LastName": "Иван",
+      "FirstName": "Пупкин",
+      "MiddleName": "Пупкович",
+      "LastName": "Пуповичевсикй",
       "DealShare": "20",
       "id": 3
+    },
+    {
+      "FirstName": "kj",
+      "MiddleName": "sdfs",
+      "LastName": "123213",
+      "DealShare": "30",
+      "id": 4
     }
   ],
   "objects": [
@@ -179,5 +154,40 @@
       "id": 2
     }
   ],
-  "purchaseObjects": []
+  "purchaseObjects": [
+    {
+      "type": "land",
+      "area": "Свао",
+      "squareMin": "1200",
+      "squareMax": "1200",
+      "roomsMin": null,
+      "roomsMax": null,
+      "floorMin": null,
+      "floorMax": null,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "type": "land",
+      "area": "sdjdfshdf",
+      "squareMin": "sdf",
+      "squareMax": "sdf",
+      "roomsMin": null,
+      "roomsMax": null,
+      "floorMin": null,
+      "floorMax": null
+    },
+    {
+      "id": 3,
+      "type": "flat",
+      "area": "srerw",
+      "squareMin": "12",
+      "squareMax": "12",
+      "roomsMin": "123",
+      "roomsMax": "12",
+      "floorMin": "1",
+      "floorMax": "1"
+    }
+  ],
+  "purchases": []
 }

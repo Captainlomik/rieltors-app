@@ -5,6 +5,7 @@ import { AlertService } from 'src/app/shared/services/alert.service';
 import { ClientService } from 'src/app/shared/services/client.service';
 import { ObjectService } from 'src/app/shared/services/object.service';
 import { OffersService } from 'src/app/shared/services/offers.service';
+import { PurchaseService } from 'src/app/shared/services/purchase.service';
 import { PurchaseObjectService } from 'src/app/shared/services/purchaseObject.service';
 import { RieltorService } from 'src/app/shared/services/rieltor.service';
 
@@ -23,7 +24,7 @@ export class PurchaseComponent {
   select = 0
   typeOfHousing: ObjectType = 'flat'
   clientId: number = 0
-  objectId: number | undefined = 0
+  objectId: number = 0
   addClientFlag: boolean = false
   addObjectFlag: boolean = false
   client: Client | undefined
@@ -31,11 +32,13 @@ export class PurchaseComponent {
   rielters: Rieltor[] | undefined
 
   selectedRieltor: any
-  price: number = 0
+  priceMin: number = 0
+  priceMax: number = 0
 
 
   constructor(private clientService: ClientService,
     private purchaseObjectService: PurchaseObjectService,
+    private purchaseService:PurchaseService,
     private rielterService: RieltorService,
     private alert: AlertService) {
     this.clientForm = new FormGroup({
@@ -86,7 +89,7 @@ export class PurchaseComponent {
     }
     if (this.addObjectFlag) {
       this.purchaseObjectService.get_byId(this.objectId!).subscribe(
-        el => {this.object = el}
+        el => { this.object = el }
       )
     }
     this.getRieltors()
@@ -94,7 +97,7 @@ export class PurchaseComponent {
 
   addPurchaseObject() {
     this.purchaseObjectService.post({
-      id: undefined,
+      id: 0,
       type: this.typeOfHousing,
       area: this.objectForm.value.area,
       squareMin: this.objectForm.value.squareMin,
@@ -117,19 +120,19 @@ export class PurchaseComponent {
     this.rielterService.get().subscribe(
       el => {
         this.rielters = el
-
       }
     )
   }
 
-  createOffers() {
-    //   this.offerService.post({
-    //     clientId: this.clientId,
-    //     objectId: this.objectId,
-    //     rieltorId: this.selectedRieltor,
-    //     price: this.price
-    //   }).subscribe(
-    //     el => this.alert.success('Добавлено')
-    //   )
+  createPurchase() {
+      this.purchaseService.post({
+        clientId: this.clientId,
+        purchaseObjectId: this.objectId,
+        rieltorId: this.selectedRieltor,
+        priceMin: this.priceMin, 
+        priceMax: this.priceMax
+      }).subscribe(
+        el => this.alert.success('Добавлено')
+      )
   }
 }

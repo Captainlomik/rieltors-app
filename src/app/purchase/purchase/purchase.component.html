@@ -174,13 +174,17 @@
                                     </mat-select>
                                 </mat-form-field>
                                 <mat-form-field class="purchase__input-wrap">
-                                    <mat-label>Стоимость</mat-label>
-                                    <input matInput [(ngModel)]="price">
+                                    <mat-label>Стоимость min</mat-label>
+                                    <input matInput [(ngModel)]="priceMin">
+                                </mat-form-field>
+                                <mat-form-field class="purchase__input-wrap">
+                                    <mat-label>Стоимость max</mat-label>
+                                    <input matInput [(ngModel)]="priceMax">
                                 </mat-form-field>
                             </div>
                             <div class="btns__wrap">
                                 <button mat-flat-button (click)="previous(index1)">Назад</button>
-                                <button mat-flat-button color="primary" (click)="createOffers()">Создать</button>
+                                <button mat-flat-button color="primary" (click)="createPurchase()">Создать</button>
                             </div>
                         </div>
                     </mat-tab>

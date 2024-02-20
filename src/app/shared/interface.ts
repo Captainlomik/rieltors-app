@@ -52,7 +52,7 @@ export interface Offer {
 }
 
 export interface PurchaseObject {
-    id: number | undefined,
+    id: number,
     type: ObjectType,
     area: string,
     squareMin: number,
@@ -66,7 +66,6 @@ export interface PurchaseObject {
 export type ObjectType = 'flat' | 'house' | 'land'
 
 export interface Purchase{
-    id: number | undefined, 
     clientId: number,
     purchaseObjectId: number,
     rieltorId: number,

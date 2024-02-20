@@ -9,12 +9,13 @@
     width: 150px;
     background-color: $main;
     color: white;
+    position: fixed;
 }
 
 .main{
     width: calc(100% - 150px);
     height: 100vh;
     margin-right: 0;
-    margin-left: 55px;
+    margin-left: 200px;
     padding-right: 55px;
 }

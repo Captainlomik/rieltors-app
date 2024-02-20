@@ -7,5 +7,5 @@ import { PurchaseObject } from "../interface";
 })
 export class PurchaseObjectService extends BaseService<PurchaseObject> {
 
-  protected override url?: string | undefined = 'purchaseObjects/'
+  protected override url?: string | undefined = 'purchaseObjects'
 }
