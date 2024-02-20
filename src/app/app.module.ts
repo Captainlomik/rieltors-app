@@ -23,6 +23,7 @@ import { SmallBlockRieltorComponent } from './rieltor/small-block/small-block.co
 import { SalePageComponent } from './sale/sale-page/sale-page.component';
 import { PurchaseComponent } from './purchase/purchase/purchase.component';
 import { PurchaseListComponent } from './purchase/purchase-list/purchase-list.component';
+import { SaleListComponent } from './sale/sale-list/sale-list.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { PurchaseListComponent } from './purchase/purchase-list/purchase-list.co
     SmallBlockRieltorComponent,
     SalePageComponent, 
     PurchaseComponent,
-    PurchaseListComponent
+    PurchaseListComponent, 
+    SaleListComponent
   ],
   imports: [
     BrowserModule,
