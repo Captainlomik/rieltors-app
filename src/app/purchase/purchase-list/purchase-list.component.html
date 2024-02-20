@@ -1,1 +1,9 @@
-<p>purchase-list works!</p>
+<div class="purchase">
+    <app-title [title]="title"></app-title>
+
+    <div *ngFor="let purchase of purchases$ | async">
+        <p>{{purchase.squareMax}}</p>
+
+    </div>
+
+</div>
