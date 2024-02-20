@@ -51,16 +51,26 @@ export interface Offer {
     price: number
 }
 
-export interface PurchaseObject{
-    id:number, 
+export interface PurchaseObject {
+    id: number | undefined,
     type: ObjectType,
-    area:string,
-    squareMin:number, 
-    squareMax:number, 
-    roomsMin?:number, 
-    roomsMax?:number, 
-    floorMin?:number,
-    floorMax?:number, 
+    area: string,
+    squareMin: number,
+    squareMax: number,
+    roomsMin?: number,
+    roomsMax?: number,
+    floorMin?: number,
+    floorMax?: number,
 }
 
-export type ObjectType= 'flat'| 'house' | 'land'
+export type ObjectType = 'flat' | 'house' | 'land'
+
+export interface Purchase{
+    id: number | undefined, 
+    clientId: number,
+    purchaseObjectId: number,
+    rieltorId: number,
+    priceMin: number, 
+    priceMax: number
+}
+
