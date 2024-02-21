@@ -145,17 +145,6 @@
       "roomsMax": null,
       "floorMin": null,
       "floorMax": null
-    },
-    {
-      "id": 3,
-      "type": "flat",
-      "area": "srerw",
-      "squareMin": "12",
-      "squareMax": "12",
-      "roomsMin": "123",
-      "roomsMax": "12",
-      "floorMin": "1",
-      "floorMax": "1"
     }
   ],
   "purchases": []

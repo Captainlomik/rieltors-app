@@ -2,8 +2,7 @@
     <app-title [title]="title"></app-title>
 
     <div *ngFor="let purchase of purchases$ | async">
-        <p>{{purchase.squareMax}}</p>
-
+        <app-small-purchase-block [purchase]="purchase" (updatePurchase)="getPurchase()"></app-small-purchase-block>
     </div>
 
 </div>
