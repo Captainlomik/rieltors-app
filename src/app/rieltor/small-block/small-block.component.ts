@@ -18,13 +18,14 @@ export class SmallBlockRieltorComponent {
     public rieltorService: RieltorService,
     public alert: AlertService) { }
 
-  ngOnInit() {
-  }
-
   openPopup() {
-    this.dialog.open(CreatePopupComponent, {
+    const ref = this.dialog.open(CreatePopupComponent, {
       data: this.rieltor
     })
+    ref.afterClosed().subscribe(
+      () => {
+        this.getRieltors.emit()
+      })
   }
 
   delPerson(rieltor: Rieltor) {

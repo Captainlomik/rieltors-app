@@ -20,14 +20,20 @@ export class RieltorsPageComponent {
   ngOnInit() {
     this.getRieltors()
   }
-
-  openPopup() {
-    this.dialog.open(CreatePopupComponent, {
-    })
-  }
-
   getRieltors() {
-    this.rieltors$ = this.rieltorService.get()
+    return this.rieltors$ = this.rieltorService.get()
   }
+  
+  openPopup() {
+    const ref = this.dialog.open(CreatePopupComponent, {
+    })
+
+    ref.afterClosed().subscribe(
+      () => {
+        this.getRieltors()
+      })
+  }
+
+
 
 }

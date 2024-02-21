@@ -43,11 +43,18 @@
   ],
   "rieltors": [
     {
-      "FirstName": "kj",
+      "FirstName": "kjeeee",
       "MiddleName": "sdfs",
-      "LastName": "123213",
-      "DealShare": "30",
+      "LastName": "sdfs",
+      "DealShare": "302",
       "id": 4
+    },
+    {
+      "FirstName": "rr",
+      "MiddleName": "rr",
+      "LastName": "rr44",
+      "DealShare": "455",
+      "id": 5
     }
   ],
   "objects": [

@@ -14,7 +14,7 @@ export class CreatePopupComponent {
   rieltorForm: FormGroup
 
   constructor(
-    private ref: MatDialogRef<CreatePopupComponent>,
+    public ref: MatDialogRef<CreatePopupComponent>,
     private rieltorService: RieltorService,
     private alert: AlertService,
     @Inject(MAT_DIALOG_DATA) public data: Rieltor) {
@@ -38,7 +38,7 @@ export class CreatePopupComponent {
   }
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close();
   }
 
 
@@ -53,9 +53,8 @@ export class CreatePopupComponent {
 
   editUser() {
     this.rieltorService.put(this.rieltorForm.value, this.data.id).subscribe({
-      next: el => console.log(el),
+      next: ()=> this.closepopup(),
       complete: () => {
-        this.closepopup()
         this.alert.success('Данные изменены')
       }
     })
