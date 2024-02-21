@@ -1,0 +1,11 @@
+<div class="block">
+    <div class="block-wrap">
+      <a class="block__info"[routerLink]="['/purchase', object!.id]">
+          <p>{{object?.city}}</p>
+      </a>
+      <div class="block__btns">
+        <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Pencil.png" alt="edit" (click)="openPopup()"></button>
+        <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Trash.png" alt="delete" (click)="delObject(object!.id)"></button>
+      </div>
+    </div>
+  </div>

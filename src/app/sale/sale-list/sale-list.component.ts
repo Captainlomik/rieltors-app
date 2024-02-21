@@ -12,6 +12,7 @@ export class SaleListComponent implements OnInit {
 title = 'Предложения на продажу'
 object$:Observable<Flat[] | Land[] | House[]> | undefined
 
+
 constructor(private saleObject:ObjectService){}
 
 ngOnInit(): void {

@@ -26,6 +26,7 @@ import { PurchaseListComponent } from './purchase/purchase-list/purchase-list.co
 import { SaleListComponent } from './sale/sale-list/sale-list.component';
 import { SmallPurchaseBlockComponent } from './purchase/small-purchase-block/small-purchase-block.component';
 import { PurchasePopupComponent } from './purchase/purchase-popup/purchase-popup.component';
+import { SmallSaleBlockComponent } from './sale/small-sale-block/small-sale-block.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { PurchasePopupComponent } from './purchase/purchase-popup/purchase-popup
     PurchaseListComponent, 
     SaleListComponent,
     SmallPurchaseBlockComponent,
-    PurchasePopupComponent
+    PurchasePopupComponent, 
+    SmallSaleBlockComponent
   ],
   imports: [
     BrowserModule,

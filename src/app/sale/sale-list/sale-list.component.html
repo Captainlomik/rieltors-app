@@ -2,6 +2,6 @@
     <app-title [title]="title"></app-title>
 
     <div *ngFor="let object of object$ | async">
-    <p>{{object.city}}</p>
+  <app-small-sale-block [object]="object"></app-small-sale-block>
     </div>
 </div>
