@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
   selector: 'app-clients-page',
   templateUrl: './clients-page.component.html',
   styleUrls: ['./clients-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ClientsPageComponent implements OnInit {
   title = "Клиенты"
@@ -20,16 +19,23 @@ export class ClientsPageComponent implements OnInit {
   constructor(private clientService: ClientService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.getClietns()
+    this.getClients()
+
   }
 
-  getClietns() {
-    this.clients$ = this.clientService.get()
+  getClients() {
+    return this.clients$ = this.clientService.get()
   }
 
   openPopup() {
-    this.dialog.open(PopupComponent, {
-    })
+    const dialogRef = this.dialog.open(PopupComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(
+      () => {
+        this.getClients()
+      }
+    )
   }
 
 }

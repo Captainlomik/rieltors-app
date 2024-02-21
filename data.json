@@ -3,7 +3,7 @@
     {
       "FirstName": "Иванов",
       "MiddleName": "Иван",
-      "LastName": "Иван12",
+      "LastName": "Иван",
       "Phone": "8 985 782 95 58",
       "Email": "vanusha123@mail.ru",
       "id": 1
@@ -11,7 +11,7 @@
     {
       "FirstName": "Илья",
       "MiddleName": "Белов ",
-      "LastName": "Викторович",
+      "LastName": "Беловgg",
       "Phone": "8 982 43 23",
       "Email": "nastiy248@mail.ru",
       "id": 4
@@ -25,54 +25,23 @@
       "id": 5
     },
     {
-      "FirstName": "Ебанько",
-      "MiddleName": "Илья",
-      "LastName": "Иларионович",
-      "Phone": "8 79234234",
-      "Email": "tesd@mail.ru",
-      "id": 8
-    },
-    {
-      "FirstName": "dfdd",
-      "MiddleName": "df",
-      "LastName": "df",
-      "Phone": "",
-      "Email": "dfd@mail.ru",
-      "id": 11
-    },
-    {
-      "FirstName": "ЛОмаамам",
-      "MiddleName": "амама",
-      "LastName": "",
-      "Phone": "",
-      "Email": "nasd@mail.ru",
-      "id": 12
-    },
-    {
       "FirstName": "Белюков",
-      "MiddleName": "Илья",
-      "LastName": "",
-      "Phone": "",
+      "MiddleName": "Илья1",
+      "LastName": "Илья",
+      "Phone": "2323",
       "Email": "nasti@mai.ru",
       "id": 14
     },
     {
       "FirstName": "Иванов",
-      "MiddleName": "Иван ",
-      "LastName": "",
-      "Phone": "",
+      "MiddleName": "Ива",
+      "LastName": "Ива",
+      "Phone": "8 984 234 23 43",
       "Email": "ivan@mail.ru",
       "id": 15
     }
   ],
   "rieltors": [
-    {
-      "FirstName": "Пупкин",
-      "MiddleName": "Пупкович",
-      "LastName": "Пуповичевсикй",
-      "DealShare": "20",
-      "id": 3
-    },
     {
       "FirstName": "kj",
       "MiddleName": "sdfs",
@@ -145,13 +114,6 @@
       "ObjectId": 4,
       "price": "10000",
       "id": 1
-    },
-    {
-      "clientId": 15,
-      "objectId": 5,
-      "rieltorId": 3,
-      "price": "123231",
-      "id": 2
     }
   ],
   "purchaseObjects": [

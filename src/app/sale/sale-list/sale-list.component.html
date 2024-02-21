@@ -1,3 +1,7 @@
 <div class="sale">
     <app-title [title]="title"></app-title>
+
+    <div *ngFor="let object of object$ | async">
+    <p>{{object.city}}</p>
+    </div>
 </div>

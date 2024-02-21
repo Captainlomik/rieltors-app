@@ -18,13 +18,18 @@ export class SmallBlockComponent {
      public clientService: ClientService,
      public alert: AlertService ) { }
 
-  ngOnInit() {
-  } 
 
   openPopup() {
-    this.dialog.open(PopupComponent, {
+    const dialogRef = this.dialog.open(PopupComponent, {
       data: this.client
     })
+
+    dialogRef.afterClosed().subscribe(
+      () => {
+        this.updateClients.emit()
+      }
+    )
+
   }
 
   delPerson(client: Client) {

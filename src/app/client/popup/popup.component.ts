@@ -15,10 +15,11 @@ export class PopupComponent implements OnInit {
   clientForm: FormGroup
 
   constructor(
-    private ref: MatDialogRef<PopupComponent>,
+    public dialogRef: MatDialogRef<PopupComponent>,
     private clientService: ClientService,
     private alert: AlertService,
-    @Inject(MAT_DIALOG_DATA) public data: Client) {
+    @Inject(MAT_DIALOG_DATA) public data: Client,
+) {
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>(''),
       "MiddleName": new FormControl<string>(''),
@@ -41,7 +42,7 @@ export class PopupComponent implements OnInit {
   }
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.dialogRef.close();
   }
 
 
@@ -57,11 +58,7 @@ export class PopupComponent implements OnInit {
 
   editUser() {
     this.clientService.put(this.clientForm.value, this.data.id).subscribe({
-      next: el => console.log(el),
-      complete: () => {
-        this.closepopup()
-        this.alert.success('Данные изменены')
-      }
+      next: () => this.closepopup(),
     })
   }
 }
