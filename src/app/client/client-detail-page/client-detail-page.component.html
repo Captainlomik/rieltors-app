@@ -2,4 +2,15 @@
     <app-title [title]="client.FirstName"></app-title>
     <h2>{{client.Phone}}</h2>
     <button (click)="goBack()">go back</button>
+
+    <div *ngIf="arrayOffers">
+        <ng-container  *ngFor="let object of arrayOffers" >
+        <mat-card>
+            <mat-card-content>
+                {{object.city}}
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+    </div>
+
 </div>

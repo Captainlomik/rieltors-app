@@ -25,20 +25,20 @@
       "id": 5
     },
     {
-      "FirstName": "Белюков",
-      "MiddleName": "Илья1",
-      "LastName": "Илья",
-      "Phone": "2323",
-      "Email": "nasti@mai.ru",
-      "id": 14
-    },
-    {
       "FirstName": "Иванов",
       "MiddleName": "Ива",
       "LastName": "Ива",
       "Phone": "8 984 234 23 43",
       "Email": "ivan@mail.ru",
       "id": 15
+    },
+    {
+      "FirstName": "Продажа",
+      "MiddleName": "1212",
+      "LastName": "1212",
+      "Phone": "12312313",
+      "Email": "tes@mail.ru",
+      "id": 16
     }
   ],
   "rieltors": [
@@ -113,14 +113,36 @@
       "flat": 0,
       "frame": 0,
       "id": 5
+    },
+    {
+      "city": "Москва",
+      "street": "Рубинштейна",
+      "longitude": "1",
+      "latitude": "1",
+      "house": 0,
+      "floor": 0,
+      "floors": 0,
+      "rooms": 0,
+      "square": "1",
+      "flat": 0,
+      "frame": 0,
+      "id": 6
     }
   ],
   "offers": [
     {
-      "clientId": 14,
-      "ObjectId": 4,
-      "price": "10000",
+      "clientId": 16,
+      "objectId": 6,
+      "rieltorId": 5,
+      "price": "123123",
       "id": 1
+    }, 
+    {
+      "clientId": 16,
+      "objectId": 5,
+      "rieltorId": 5,
+      "price": "123123",
+      "id": 2
     }
   ],
   "purchaseObjects": [
@@ -138,9 +160,9 @@
     {
       "id": 2,
       "type": "land",
-      "area": "sdjdfshdf",
-      "squareMin": "sdf",
-      "squareMax": "sdf",
+      "area": "er",
+      "squareMin": "123",
+      "squareMax": "123",
       "roomsMin": null,
       "roomsMax": null,
       "floorMin": null,

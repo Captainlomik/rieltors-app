@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { Purchase, PurchaseObject } from 'src/app/shared/interface';
+import { PurchaseObject } from 'src/app/shared/interface';
 import { PurchaseObjectService } from 'src/app/shared/services/purchaseObject.service';
-import { PurchasePopupComponent } from '../purchase-popup/purchase-popup.component';
 
 @Component({
   selector: 'app-purchase-list',
@@ -24,17 +23,6 @@ export class PurchaseListComponent implements OnInit {
     this.purchases$ = this.purchaseObjectService.get()
   }
 
-  openPopup() {
-   const dialogRef = this.dialog.open(PurchasePopupComponent, {
-      // data: this.client
-    })
-
-    dialogRef.afterClosed().subscribe(
-      () => {
-        this.getPurchase()
-      }
-    )
-  }
-
+ 
 }
 

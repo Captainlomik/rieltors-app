@@ -25,9 +25,8 @@ import { PurchaseComponent } from './purchase/purchase/purchase.component';
 import { PurchaseListComponent } from './purchase/purchase-list/purchase-list.component';
 import { SaleListComponent } from './sale/sale-list/sale-list.component';
 import { SmallPurchaseBlockComponent } from './purchase/small-purchase-block/small-purchase-block.component';
-import { PurchasePopupComponent } from './purchase/purchase-popup/purchase-popup.component';
 import { SmallSaleBlockComponent } from './sale/small-sale-block/small-sale-block.component';
-
+import { ClientPipePipe } from './shared/pipe/client-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -49,8 +48,8 @@ import { SmallSaleBlockComponent } from './sale/small-sale-block/small-sale-bloc
     PurchaseListComponent, 
     SaleListComponent,
     SmallPurchaseBlockComponent,
-    PurchasePopupComponent, 
-    SmallSaleBlockComponent
+    SmallSaleBlockComponent, 
+    ClientPipePipe
   ],
   imports: [
     BrowserModule,
