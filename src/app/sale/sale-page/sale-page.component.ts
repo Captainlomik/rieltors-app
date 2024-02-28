@@ -35,8 +35,8 @@ export class SalePageComponent {
   constructor(private clientService: ClientService,
     private objectService: ObjectService,
     private rielterService: RieltorService,
-    private offerService: OffersService, 
-    private alert:AlertService) {
+    private offerService: OffersService,
+    private alert: AlertService) {
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>('', Validators.required),
       "MiddleName": new FormControl<string>('', Validators.required),
@@ -98,9 +98,11 @@ export class SalePageComponent {
   addObject() {
     this.objectService.post(this.objectForm.value).subscribe(
       el => {
-        this.objectId = el.id;
-        this.addObjectFlag = true
-        console.log(`объект ${this.objectId} добавлен`)
+        if (el) {
+          this.objectId = el.id;
+          this.addObjectFlag = true
+          console.log(`объект ${this.objectId} добавлен`)
+        }
       }
     )
   }
@@ -121,7 +123,7 @@ export class SalePageComponent {
       rieltorId: this.selectedRieltor,
       price: this.price
     }).subscribe(
-      el=> this.alert.success('Добавлено')
+      el => this.alert.success('Добавлено')
     )
   }
 

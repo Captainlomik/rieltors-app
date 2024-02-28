@@ -10,7 +10,7 @@ import { ObjectService } from 'src/app/shared/services/object.service';
 })
 export class SaleListComponent implements OnInit {
 title = 'Предложения на продажу'
-object$:Observable<Flat[] | Land[] | House[]> | undefined
+object$!:Observable<[Flat | House | Land | undefined]>
 
 
 constructor(private saleObject:ObjectService){}
@@ -20,7 +20,7 @@ ngOnInit(): void {
 }
 
 getObject(){
-  this.object$ = this.saleObject.get()
+   this.object$ = this.saleObject.get()
 }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ClientService } from '../../shared/services/client.service';
 import { Observable, map, mergeMap, switchMap } from 'rxjs';
-import { Client, Object, Offer } from '../../shared/interface';
+import { Client, Flat, House, Land, Object, Offer } from '../../shared/interface';
 import { Location } from '@angular/common';
 import { OffersService } from 'src/app/shared/services/offers.service';
 import { ObjectService } from 'src/app/shared/services/object.service';
@@ -15,9 +15,8 @@ import { ObjectService } from 'src/app/shared/services/object.service';
 export class ClientDetailPageComponent implements OnInit {
   param!: number
   client$!: Observable<Client>
-  offers: Offer[] | undefined
-  arrayOffers: Object[] = []
-  object!: Object
+  offer: Offer | undefined
+  arrayObjects: Array<Flat | House | Land> = []
 
   constructor(private route: ActivatedRoute,
     private clientService: ClientService,
@@ -32,7 +31,6 @@ export class ClientDetailPageComponent implements OnInit {
     }))
 
     this.getObject()
-
   }
 
   goBack(): void {
@@ -48,13 +46,13 @@ export class ClientDetailPageComponent implements OnInit {
       }),
       mergeMap(res => {
         for (let i of res) {
-          this.objectService.get_byId(i.objectId).subscribe(el => this.arrayOffers.push(el))
+          this.objectService.get_byId(i.objectId).subscribe(el => { if (el) this.arrayObjects.push(el) })
         }
         return res
       })
-    ).subscribe()
+    ).subscribe(
+      el =>
+        this.offer = el
+    )
   }
-
-
-
 }

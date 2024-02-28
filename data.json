@@ -33,19 +33,27 @@
       "id": 15
     },
     {
-      "FirstName": "Продажа",
-      "MiddleName": "1212",
-      "LastName": "1212",
-      "Phone": "12312313",
+      "FirstName": "Иванов",
+      "MiddleName": "Иван",
+      "LastName": "Иванович",
+      "Phone": "8 985 782 95 58",
       "Email": "tes@mail.ru",
       "id": 16
+    },
+    {
+      "FirstName": "weqwe",
+      "MiddleName": "qweqwe",
+      "LastName": "",
+      "Phone": "",
+      "Email": "rewrr@naksd.ru",
+      "id": 17
     }
   ],
   "rieltors": [
     {
       "FirstName": "kjeeee",
       "MiddleName": "sdfs",
-      "LastName": "sdfs",
+      "LastName": "hkjkjhh",
       "DealShare": "302",
       "id": 4
     },
@@ -70,35 +78,8 @@
       "square": "212",
       "flat": "23",
       "frame": "21",
+      "type": "Flat",
       "id": 1
-    },
-    {
-      "city": "dfdf",
-      "street": "dfdf",
-      "longitude": "234",
-      "latitude": "234234",
-      "house": "1",
-      "floor": "10",
-      "floors": "324",
-      "rooms": 0,
-      "square": "234",
-      "flat": "10",
-      "frame": "11",
-      "id": 2
-    },
-    {
-      "city": "Москва",
-      "street": "лвыв",
-      "longitude": 0,
-      "latitude": "111",
-      "house": 0,
-      "floor": 0,
-      "floors": 0,
-      "rooms": 0,
-      "square": "10",
-      "flat": 0,
-      "frame": 0,
-      "id": 4
     },
     {
       "city": "Мосва",
@@ -111,7 +92,8 @@
       "rooms": 0,
       "square": 0,
       "flat": 0,
-      "frame": 0,
+      "frame": "12",
+      "type": "Land",
       "id": 5
     },
     {
@@ -119,14 +101,30 @@
       "street": "Рубинштейна",
       "longitude": "1",
       "latitude": "1",
+      "house": "1",
+      "floor": "1",
+      "floors": "12",
+      "rooms": "`1",
+      "square": "1",
+      "flat": "12",
+      "frame": "123",
+      "type": "Flat",
+      "id": 6
+    },
+    {
+      "city": "erer",
+      "street": "ererrer",
+      "longitude": "10",
+      "latitude": "10",
       "house": 0,
       "floor": 0,
       "floors": 0,
       "rooms": 0,
-      "square": "1",
+      "square": "10",
       "flat": 0,
       "frame": 0,
-      "id": 6
+      "type": "Land",
+      "id": 7
     }
   ],
   "offers": [
@@ -136,27 +134,23 @@
       "rieltorId": 5,
       "price": "123123",
       "id": 1
-    }, 
+    },
     {
       "clientId": 16,
       "objectId": 5,
       "rieltorId": 5,
       "price": "123123",
       "id": 2
+    },
+    {
+      "clientId": 17,
+      "objectId": 7,
+      "rieltorId": 4,
+      "price": "212312312",
+      "id": 3
     }
   ],
   "purchaseObjects": [
-    {
-      "type": "land",
-      "area": "Свао",
-      "squareMin": "1200",
-      "squareMax": "1200",
-      "roomsMin": null,
-      "roomsMax": null,
-      "floorMin": null,
-      "floorMax": null,
-      "id": 1
-    },
     {
       "id": 2,
       "type": "land",

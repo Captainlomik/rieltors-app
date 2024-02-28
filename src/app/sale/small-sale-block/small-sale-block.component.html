@@ -2,6 +2,8 @@
     <div class="block-wrap">
       <a class="block__info"[routerLink]="['/purchase', object!.id]">
           <p>{{object?.city}}</p>
+          <p>{{object?.street}}</p>
+         
       </a>
       <div class="block__btns">
         <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Pencil.png" alt="edit" (click)="openPopup()"></button>

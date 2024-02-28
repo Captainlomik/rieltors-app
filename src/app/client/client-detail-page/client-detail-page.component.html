@@ -1,16 +1,42 @@
 <div *ngIf="client$ | async as client">
     <app-title [title]="client.FirstName"></app-title>
-    <h2>{{client.Phone}}</h2>
-    <button (click)="goBack()">go back</button>
+    <button class="back" (click)="goBack()">Назад</button>
 
-    <div *ngIf="arrayOffers">
-        <ng-container  *ngFor="let object of arrayOffers" >
-        <mat-card>
-            <mat-card-content>
-                {{object.city}}
-            </mat-card-content>
-        </mat-card>
-    </ng-container>
+    <mat-card class="client__wrap">
+        <mat-card-content>
+            <h2 class="client__name">{{client.FirstName}} {{client.LastName}} {{client.MiddleName}}</h2>
+            <div class="client__info">
+                <p class="client__info-text" *ngIf="client.Phone">Телефон: {{client.Phone}}</p>
+                <p class="client__info-text" *ngIf="client.Email">Email: {{client.Email}}</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+
+
+    <div class="object__wrap" *ngIf="arrayObjects">
+        <h2 class="object__header">Объекты</h2>
+        <ng-container *ngFor="let object of arrayObjects">
+            <mat-card class="object__card">
+                <mat-card-content>
+                    <p>Город: {{object.city}}</p>
+                    <p>Улица: {{object.street}}</p>
+                    <div class="object__dots">
+                        <p>Ширина: {{object.longitude}}</p>
+                        <p>Долгота: {{object.latitude}}</p>
+                    </div>
+                    <div *ngFor="let item of object.getValues()">
+                        <p>{{item.name}}: {{item.value}}</p>
+                    </div>
+
+
+
+
+
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
     </div>
 
 </div>
