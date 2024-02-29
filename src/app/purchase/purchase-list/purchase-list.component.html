@@ -1,15 +1,15 @@
 <div class="purchase">
     <app-title [title]="title"></app-title>
     <div class="purchase__btn-wrap">
-        <!-- <mat-form-field class="client__search">
+        <mat-form-field class="client__search">
             <input matInput type="text" [(ngModel)]="search" placeholder="Поиск">
             <button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
                 <mat-icon>close</mat-icon>
             </button> 
-        </mat-form-field> -->
+        </mat-form-field>
     </div>
 
-    <div *ngFor="let purchase of purchases$ | async">
+    <div *ngFor="let purchase of(purchases$ | async) | searchPurchase: search">
         <app-small-purchase-block [purchase]="purchase" (updatePurchase)="getPurchase()"></app-small-purchase-block>
     </div>
 

@@ -28,6 +28,7 @@ import { SmallPurchaseBlockComponent } from './purchase/small-purchase-block/sma
 import { SmallSaleBlockComponent } from './sale/small-sale-block/small-sale-block.component';
 import { ClientPipePipe } from './shared/pipe/client-pipe.pipe';
 import { SearchRieltorPipe } from './shared/pipe/searchRieltor.pipe';
+import { SearchPurchasePipe } from './shared/pipe/searchPurchase.pipe';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,6 @@ import { SearchRieltorPipe } from './shared/pipe/searchRieltor.pipe';
     ClientDetailPageComponent,
     PopupComponent,
     AlertComponent,
-    SearchPipe, 
-    SearchRieltorPipe,
     RieltorsPageComponent,
     RieltorDetailPageComponent, 
     CreatePopupComponent, 
@@ -50,8 +49,12 @@ import { SearchRieltorPipe } from './shared/pipe/searchRieltor.pipe';
     PurchaseListComponent, 
     SaleListComponent,
     SmallPurchaseBlockComponent,
-    SmallSaleBlockComponent, 
-    ClientPipePipe
+    SmallSaleBlockComponent,
+
+    ClientPipePipe, 
+    SearchPipe, 
+    SearchRieltorPipe,
+    SearchPurchasePipe
   ],
   imports: [
     BrowserModule,

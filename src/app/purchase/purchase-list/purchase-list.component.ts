@@ -12,6 +12,7 @@ import { PurchaseObjectService } from 'src/app/shared/services/purchaseObject.se
 export class PurchaseListComponent implements OnInit {
   title = 'Потребности объекты'
   purchases$: Observable<PurchaseObject[]> | undefined
+  search = ''
 
   constructor(private purchaseObjectService: PurchaseObjectService, private dialog: MatDialog) {
   }
