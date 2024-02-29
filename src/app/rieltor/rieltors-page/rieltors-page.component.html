@@ -10,7 +10,7 @@
         <button class="rieltor__btn" mat-raised-button color="primary" (click)="openPopup()"> Создать</button>
     </div>
 
-    <div *ngFor="let rieltor of (rieltors$ | async )">
+    <div *ngFor="let rieltor of (rieltors$ | async ) | searchRieltor:search">
         <app-small-rieltor [rieltor]="rieltor" (getRieltors)="getRieltors()"></app-small-rieltor>
     </div>
 </div>
