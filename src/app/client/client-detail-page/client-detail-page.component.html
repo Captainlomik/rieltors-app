@@ -1,4 +1,4 @@
-<div *ngIf="client$ | async as client">
+<div class="client" *ngIf="client$ | async as client">
     <app-title [title]="client.FirstName"></app-title>
     <button class="back" (click)="goBack()">Назад</button>
 
@@ -12,31 +12,61 @@
         </mat-card-content>
     </mat-card>
 
-
-
-
-    <div class="object__wrap" *ngIf="arrayObjects">
-        <h2 class="object__header">Объекты</h2>
+    <div class="object__wrap" *ngIf="arrayObjects.length!==0">
+        <h2 class="object__header">Объекты на продажу</h2>
         <ng-container *ngFor="let object of arrayObjects">
             <mat-card class="object__card">
                 <mat-card-content>
-                    <p>Город: {{object.city}}</p>
-                    <p>Улица: {{object.street}}</p>
-                    <div class="object__dots">
-                        <p>Ширина: {{object.longitude}}</p>
-                        <p>Долгота: {{object.latitude}}</p>
+                    <div class="object__info">
+                        <div class="object__location">
+                            <p class="object__text">Город: {{object.city}}</p>
+                            <p class="object__text">Улица: {{object.street}}</p>
+                        </div>
+                        <div class="object__dots">
+                            <p class="object__text">Ширина: {{object.longitude}}</p>
+                            <p class="object__text">Долгота: {{object.latitude}}</p>
+                        </div>
                     </div>
                     <div *ngFor="let item of object.getValues()">
-                        <p>{{item.name}}: {{item.value}}</p>
+                        <p class="object__text">{{item.name}}: {{item.value}}</p>
                     </div>
-
-
-
-
-
+                    <p class="object__text-big">Цена: {{offer.price}} руб.</p>
                 </mat-card-content>
             </mat-card>
         </ng-container>
+    </div>
+
+    <div class="object__wrap" *ngIf="purchase">
+        <h2 class="object__header">Объекты для покупки</h2>
+        <ng-container *ngFor="let object of arrayPurchaseObject">
+            <mat-card class="object__card">
+                <mat-card-content>
+                    <div class="object__info">
+                        <div class="object__main">
+                            <p class="object__text">Тип объекта: {{object.type}}</p>
+                            <p class="object__text">Район: {{object.area}}</p>
+                        </div>
+                        <div class="object__floors">
+                            <p class="object__text">Этаж min: {{object.floorMin}}</p>
+                            <p class="object__text">Этаж max: {{object.floorMax}}</p>
+                        </div>
+                        <div class="object__rooms">
+                            <p class="object__text">Комнаты min: {{object.roomsMin}}</p>
+                            <p class="object__text">Комнаты max: {{object.roomsMax}}</p>
+                        </div>
+                        <div class="object__squares">
+                            <p class="object__text">Площадь min: {{object.squareMin}}</p>
+                            <p class="object__text">Площадь max: {{object.squareMax}}</p>
+                        </div>
+                    </div>
+                    <div class="object__price">
+                        <p class="object__text-big">Цена минимальная: {{purchase.priceMin}} руб.</p>
+                        <p class="object__text-big">Цена максимальная: {{purchase.priceMax}} руб.</p>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+
     </div>
 
 </div>
