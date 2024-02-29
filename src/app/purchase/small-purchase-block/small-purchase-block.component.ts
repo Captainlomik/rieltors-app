@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PurchaseObject } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
-import { PurchaseService } from 'src/app/shared/services/purchase.service';
 import { PurchaseObjectService } from 'src/app/shared/services/purchaseObject.service';
 
 @Component({
@@ -9,36 +8,33 @@ import { PurchaseObjectService } from 'src/app/shared/services/purchaseObject.se
   templateUrl: './small-purchase-block.component.html',
   styleUrls: ['./small-purchase-block.component.scss']
 })
-export class SmallPurchaseBlockComponent {
+
+export class SmallPurchaseBlockComponent implements OnInit {
+
   @Input() purchase: PurchaseObject | undefined
   @Output() updatePurchase = new EventEmitter()
-
+  type = {
+    'flat': 'Квартира',
+    'house': 'Дом',
+    'land': 'Земля'
+  }
+  answer: string = ''
 
   constructor(private purchaseService: PurchaseObjectService,
     private alert: AlertService) { }
 
-  openPopup() {
-    // const dialogRef = this.dialog.open(PopupComponent, {
-    //   data: this.client
-    // })
-
-    // dialogRef.afterClosed().subscribe(
-    //   () => {
-    //     this.updateClients.emit()
-    //   }
-    // )
-
+  ngOnInit(): void {
+    this.answer = this.type[this.purchase!.type]
   }
+
 
   delPurchase(id: number) {
     this.purchaseService.delete(id).subscribe(
       () => {
         this.updatePurchase.emit()
         this.alert.success('Пользователь удален')
-      }
-    )
+      })
   }
-
 
 
 }

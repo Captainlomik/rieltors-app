@@ -1,10 +1,12 @@
 <div class="block">
     <div class="block-wrap">
       <a class="block__info"[routerLink]="['/purchase', purchase!.id]">
+          <p>Тип: {{answer}}</p>
           <p>{{purchase?.area}}</p>
+          <p>{{purchase?.squareMin}} - {{purchase?.squareMax}} кв.м</p>
+         
       </a>
       <div class="block__btns">
-        <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Pencil.png" alt="edit" (click)="openPopup()"></button>
         <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Trash.png" alt="delete" (click)="delPurchase(purchase!.id)"></button>
       </div>
     </div>
