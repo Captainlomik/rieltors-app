@@ -9,23 +9,23 @@
             <div *ngIf="index1===0" class="tab__content">
               <form [formGroup]="clientForm" class="sale__client-form" (ngSubmit)="addClient()">
                 <div class="sale__client-info">
-                  <mat-form-field class="sale__input-wrap">
+                  <mat-form-field class="sale__input">
                     <mat-label>Фамилия</mat-label>
                     <input matInput placeholder="Иванов" formControlName="FirstName">
                   </mat-form-field>
-                  <mat-form-field class="sale__input-wrap">
+                  <mat-form-field class="sale__input">
                     <mat-label>Имя</mat-label>
                     <input matInput placeholder="Иван" formControlName="MiddleName">
                   </mat-form-field>
-                  <mat-form-field class="sale__input-wrap">
+                  <mat-form-field class="sale__input">
                     <mat-label>Отчество</mat-label>
                     <input matInput placeholder="Иванович" formControlName="LastName">
                   </mat-form-field>
-                  <mat-form-field class="sale__input-wrap">
+                  <mat-form-field class="sale__input">
                     <mat-label>Email</mat-label>
                     <input matInput placeholder="email@mail.ru" formControlName="Email">
                   </mat-form-field>
-                  <mat-form-field class="sale__input-wrap">
+                  <mat-form-field class="sale__input">
                     <mat-label>Телефон</mat-label>
                     <input matInput placeholder="8 985 782 95 58" formControlName="Phone">
                   </mat-form-field>
@@ -33,10 +33,8 @@
                 <button mat-flat-button color="primary" (click)="next(index1)">Дальше</button>
               </form>
             </div>
-            <div *ngIf="index1===1" class=" tab__content">
+            <div *ngIf="index1===1" class="tab__content">
               <div>
-
-
                 <mat-radio-group [(ngModel)]="typeOfHousing">
                   <mat-radio-button value="flat">Квартира</mat-radio-button>
                   <mat-radio-button value="house">Дом</mat-radio-button>
@@ -44,126 +42,129 @@
                 </mat-radio-group>
 
                 <form [formGroup]="objectForm" (ngSubmit)="addObject()">
-                  <div class="inputs-wrap">
-                    <div class="inputs-form">
+                  <div class="inputs__form">
+                    <div class="line">
+                      <mat-form-field class="sale__input-big">
+                        <mat-label>Город</mat-label>
+                        <input matInput placeholder="Москва" formControlName="city">
+                      </mat-form-field>
+                      <mat-form-field class="sale__input-big">
+                        <mat-label>Улица</mat-label>
+                        <input matInput placeholder="Б. Ивановская" formControlName="street">
+                      </mat-form-field>
+                    </div>
+                    <div *ngIf="typeOfHousing==='flat'">
                       <div class="line">
-                        <mat-form-field class="sale__input2-wrap">
-                          <mat-label>Город</mat-label>
-                          <input matInput placeholder="Москва" formControlName="city">
-                        </mat-form-field>
-                        <mat-form-field class="sale__input2-wrap">
-                          <mat-label>Улица</mat-label>
-                          <input matInput placeholder="Б. Ивановская" formControlName="street">
-                        </mat-form-field>
-                      </div>
-                      <div *ngIf="typeOfHousing==='flat'">
-                        <div class="line-small">
-                          <div class="input__block-small">
-                            <mat-form-field class="sale__input-small">
-                              <mat-label>Дом</mat-label>
-                              <input matInput formControlName="house">
-                            </mat-form-field>
-                            <mat-form-field class="sale__input-small">
-                              <mat-label>Корпус</mat-label>
-                              <input matInput formControlName="frame">
-                            </mat-form-field>
-                            <mat-form-field class="sale__input-small">
-                              <mat-label>Квартира</mat-label>
-                              <input matInput formControlName="flat">
-                            </mat-form-field>
-                          </div>
-
-                          <div class="input__block-small">
-                            <mat-form-field class="sale__input2-wrap">
-                              <mat-label>Широта</mat-label>
-                              <input matInput formControlName="latitude">
-                            </mat-form-field>
-                            <mat-form-field class="sale__input2-wrap">
-                              <mat-label>Долгота</mat-label>
-                              <input matInput formControlName="longitude">
-                            </mat-form-field>
-                          </div>
-                        </div>
-                        <div class="line-small">
-                          <div class="input__block-small">
-                            <mat-form-field class="sale__input2-wrap">
-                              <mat-label>Этаж</mat-label>
-                              <input matInput formControlName="floor">
-                            </mat-form-field>
-                            <mat-form-field class="sale__input2-wrap">
-                              <mat-label>Кол-во комнат</mat-label>
-                              <input matInput formControlName="floors">
-                            </mat-form-field>
-                          </div>
-                          <mat-form-field class="sale__input1-wrap">
-                            <mat-label>Общая площадь квартиры</mat-label>
-                            <input matInput formControlName="square">
+                        <div class="input__block-small">
+                          <mat-form-field class="sale__input-small">
+                            <mat-label>Дом</mat-label>
+                            <input matInput formControlName="house">
+                          </mat-form-field>
+                          <mat-form-field class="sale__input-small">
+                            <mat-label>Корпус</mat-label>
+                            <input matInput formControlName="frame">
+                          </mat-form-field>
+                          <mat-form-field class="sale__input-small">
+                            <mat-label>Квартира</mat-label>
+                            <input matInput formControlName="flat">
                           </mat-form-field>
                         </div>
-                      </div>
 
-
-                      <div *ngIf="typeOfHousing==='house'">
-                        <mat-form-field class="sale__input-wrap">
-                          <mat-label>Дом</mat-label>
-                          <input matInput formControlName="house">
-                        </mat-form-field>
-                        <div>
-                          <mat-form-field class="sale__input-wrap">
+                        <div class="input__block-small">
+                          <mat-form-field class="sale__input-big">
                             <mat-label>Широта</mat-label>
                             <input matInput formControlName="latitude">
                           </mat-form-field>
-                          <mat-form-field class="sale__input-wrap">
+                          <mat-form-field class="sale__input-big">
                             <mat-label>Долгота</mat-label>
                             <input matInput formControlName="longitude">
                           </mat-form-field>
                         </div>
-                        <div>
-                          <mat-form-field class="sale__input-wrap">
+                      </div>
+                      <div class="line">
+                        <div class="input__block-small">
+                          <mat-form-field class="sale__input-big">
+                            <mat-label>Этаж</mat-label>
+                            <input matInput formControlName="floor">
+                          </mat-form-field>
+                          <mat-form-field class="sale__input-big">
+                            <mat-label>Кол-во комнат</mat-label>
+                            <input matInput formControlName="floors">
+                          </mat-form-field>
+                        </div>
+                        <mat-form-field class="sale__input-big">
+                          <mat-label>Общая площадь квартиры</mat-label>
+                          <input matInput formControlName="square">
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+
+                    <div *ngIf="typeOfHousing==='house'">
+                      <div class="line">
+
+                        <mat-form-field class="sale__input-big">
+                          <mat-label>Дом</mat-label>
+                          <input matInput formControlName="house">
+                        </mat-form-field>
+                        <div class="input__block-small">
+                          <mat-form-field class="sale__input-big">
+                            <mat-label>Широта</mat-label>
+                            <input matInput formControlName="latitude">
+                          </mat-form-field>
+                          <mat-form-field class="sale__input-big">
+                            <mat-label>Долгота</mat-label>
+                            <input matInput formControlName="longitude">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="line">
+                        <div class="input__block-small">
+                          <mat-form-field class="sale__input-big">
                             <mat-label>Этажность</mat-label>
                             <input matInput formControlName="floors">
                           </mat-form-field>
-                          <mat-form-field class="sale__input-wrap">
+                          <mat-form-field class="sale__input-big">
                             <mat-label>Кол-во комнат</mat-label>
                             <input matInput formControlName="rooms">
                           </mat-form-field>
                         </div>
-                        <mat-form-field class="sale__input-wrap">
+                        <mat-form-field class="sale__input-big">
                           <mat-label>Общая площадь дома</mat-label>
                           <input matInput formControlName="square">
                         </mat-form-field>
                       </div>
+                    </div>
 
-                      <div *ngIf="typeOfHousing==='land'">
-                        <mat-form-field class="sale__input-wrap">
+                    <div *ngIf="typeOfHousing==='land'">
+                      <div class="line">
+                        <mat-form-field class="sale__input-big">
                           <mat-label>Площадь</mat-label>
                           <input matInput formControlName="square">
                         </mat-form-field>
-                        <div>
-                          <mat-form-field class="sale__input-wrap">
+                        <div class="input__block-small">
+                          <mat-form-field class="sale__input-big">
                             <mat-label>Широта</mat-label>
                             <input matInput formControlName="latitude">
                           </mat-form-field>
-                          <mat-form-field class="sale__input-wrap">
+                          <mat-form-field class="sale__input-big">
                             <mat-label>Долгота</mat-label>
                             <input matInput formControlName="longitude">
                           </mat-form-field>
                         </div>
                       </div>
-                      <button class="form__btn" mat-flat-button color="primary">Сохранить</button>
                     </div>
-                    <img class="map" src="./assets/cat.jpg" alt="">
-
+                    <div class="btn__wrap"><button class="form__btn" mat-flat-button color="primary">Сохранить</button>
+                    </div>
                   </div>
-
                 </form>
               </div>
-              <div class="btns-wrap">
+              <div class="btns">
                 <button mat-flat-button (click)="previous(index1)">Назад</button>
                 <button mat-flat-button color="primary" (click)="getInfo()" (click)="next(index1)">Дальше</button>
               </div>
             </div>
-            <div *ngIf="index1===2" class="tab__content" (click)="getRieltors()" >
+            <div *ngIf="index1===2" class="tab__content" (click)="getRieltors()">
               <div *ngIf="client">
                 <h4>Клиент</h4>
                 <p>{{client.FirstName}} {{client.MiddleName}} {{client.LastName}}</p>
@@ -173,10 +174,10 @@
 
               <div *ngIf="object">
                 <h4>Объект</h4>
-                <p>{{object.city}}</p>
-                <p>{{object.street}}</p>
-                <p>{{object.latitude}}</p>
-                <p>{{object.longitude}}</p>
+                <p>Город: {{object.city}}</p>
+                <p>Улица: {{object.street}}</p>
+                <p>Широта: {{object.latitude}}</p>
+                <p>Долгота: {{object.longitude}}</p>
               </div>
               <div class="offer__inputs">
                 <mat-form-field class="sale__input-wrap">
@@ -187,7 +188,7 @@
                     </ng-container>
                   </mat-select>
                 </mat-form-field>
-                <mat-form-field class="sale__input-wrap" >
+                <mat-form-field class="sale__input-wrap">
                   <mat-label>Стоимость</mat-label>
                   <input matInput [(ngModel)]="price">
                 </mat-form-field>

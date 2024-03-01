@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ClientService } from '../../shared/services/client.service';
-import { Observable, filter, map, mergeMap, switchMap } from 'rxjs';
-import { Client, Flat, House, Land, Object, Offer, Purchase, PurchaseObject } from '../../shared/interface';
+import { Observable, map, mergeMap, switchMap } from 'rxjs';
+import { Client, Flat, House, Land,  Offer, Purchase, PurchaseObject } from '../../shared/interface';
 import { Location } from '@angular/common';
 import { OffersService } from 'src/app/shared/services/offers.service';
 import { ObjectService } from 'src/app/shared/services/object.service';

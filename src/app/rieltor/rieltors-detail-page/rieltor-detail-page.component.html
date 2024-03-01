@@ -1,1 +1,14 @@
-<p>rieltors-detail-page works!</p>
+<div class="rieltor" *ngIf="rieltor$ | async as rieltor">
+    <app-title [title]="rieltor.FirstName"></app-title>
+    <button class="back" (click)="goBack()">Назад</button>
+
+    <mat-card class="rieltor__wrap">
+        <mat-card-content>
+            <h2 class="rieltor__name">{{rieltor.FirstName}} {{rieltor.LastName}} {{rieltor.MiddleName}}</h2>
+            <div class="rieltor__info">
+                <p class="rieltor__info-text" *ngIf="rieltor.DealShare">Процент: {{ rieltor.DealShare}}</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+</div>

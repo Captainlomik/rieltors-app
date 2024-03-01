@@ -1,0 +1,35 @@
+.back {
+    color: lightgrey;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+}
+
+.back::before {
+    content: '←';
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+}
+
+.back:hover {
+    color: black;
+}
+
+.rieltor{
+     padding-bottom: 30px;
+
+    &__wrap {
+        margin: 20px 0;
+    }
+
+    &__info {
+        display: flex;
+        margin-top: 10px;
+
+        &-text {
+            margin-right: 20px;
+        }
+    }
+}
