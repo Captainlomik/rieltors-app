@@ -158,38 +158,6 @@
       "id": 3
     }
   ],
-  "purchaseObjects": [
-    {
-      "id": 2,
-      "type": "land",
-      "area": "er",
-      "squareMin": "123",
-      "squareMax": "123",
-      "roomsMin": null,
-      "roomsMax": null,
-      "floorMin": null,
-      "floorMax": null
-    },
-    {
-      "id": 3,
-      "type": "land",
-      "area": "werwer",
-      "squareMin": "123",
-      "squareMax": "21313",
-      "roomsMin": null,
-      "roomsMax": null,
-      "floorMin": null,
-      "floorMax": null
-    }
-  ],
-  "purchases": [
-    {
-      "clientId": 18,
-      "purchaseObjectId": 3,
-      "rieltorId": 4,
-      "priceMin": "100",
-      "priceMax": "1000",
-      "id": 1
-    }
-  ]
+  "purchaseObjects": [],
+  "purchases": []
 }

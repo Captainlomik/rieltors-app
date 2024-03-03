@@ -11,4 +11,27 @@
         </mat-card-content>
     </mat-card>
 
+    <div class="works" *ngIf="arrayClients.length !== 0">
+        <h2 class="works__title">В работе на продажу</h2>
+        <ng-container *ngFor="let client of arrayClients">
+            <mat-card>
+                <mat-card-content>
+                    <h2 class="works__info-header">{{client.FirstName}} {{client.MiddleName}}{{client.LastName}}</h2>
+                    <p class="works__info-text" *ngIf="client.Phone">Телефон: {{client.Phone}}</p>
+                    <p *ngIf="client.Email" class="works__info-text" >Email: {{client.Email}}</p>
+                    <mat-divider></mat-divider>
+                    <h2 class="works__info-header">Объект</h2>
+                    <div class="works__info-block" *ngIf="object">
+                        <p class="works__info-text" *ngIf="object.area">Район: {{object.area}}</p>
+                        <p class="works__info-text" *ngIf="object.floorMin">Этаж: {{object.floorMin}} - {{object.floorMax}}</p>
+                        <p class="works__info-text" *ngIf="object.roomsMin">Количество комнат: {{object.roomsMin}} - {{object.roomsMax}}</p>
+                        <p class="works__info-text" *ngIf="object.squareMin">Площадь: {{object.squareMin}} - {{object.squareMax}} кв.м</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <p class="works__info-text">Стоимость: {{purchase.priceMin}} - {{purchase.priceMax}} руб.</p>
+                </mat-card-content>
+
+            </mat-card>
+        </ng-container>
+    </div>
 </div>

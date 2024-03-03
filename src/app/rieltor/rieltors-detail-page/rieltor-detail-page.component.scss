@@ -33,3 +33,24 @@
         }
     }
 }
+
+mat-divider{
+    margin: 20px 0;
+}
+
+.works{
+
+    &__title{
+        padding: 20px 0;
+    }
+
+    &__info{
+        &-header{
+            padding-bottom: 10px;
+        }
+
+        &-text{
+            padding: 2px 0;
+        }
+    }
+}
