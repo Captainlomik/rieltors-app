@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Client, Flat, House, Land, Rieltor } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
@@ -13,7 +13,7 @@ import { RieltorService } from 'src/app/shared/services/rieltor.service';
   templateUrl: './sale-page.component.html',
   styleUrls: ['./sale-page.component.scss']
 })
-export class SalePageComponent {
+export class SalePageComponent implements OnInit {
   title = 'Продажа'
   clientForm: FormGroup
   objectForm: FormGroup
@@ -26,9 +26,11 @@ export class SalePageComponent {
   addObjectFlag: boolean = false
   client: Client | undefined
   object: Flat | House | Land | undefined
-  rielters: Rieltor[] | undefined
+  rielters!: Rieltor[]
+  clients!: Client[]
 
   selectedRieltor: any
+  selectedClient: Client | undefined
   price: number = 0
 
 
@@ -58,6 +60,10 @@ export class SalePageComponent {
       "flat": new FormControl<number>(0),
       "frame": new FormControl<number>(0),
     })
+  }
+
+  ngOnInit(): void {
+    this.getClient()
   }
 
 
@@ -113,6 +119,12 @@ export class SalePageComponent {
         this.rielters = el
 
       }
+    )
+  }
+
+  getClient() {
+    this.clientService.get().subscribe(
+      el => { this.clients = el }
     )
   }
 

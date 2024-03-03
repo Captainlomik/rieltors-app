@@ -8,6 +8,14 @@
 
             <div *ngIf="index1===0" class="tab__content">
               <form [formGroup]="clientForm" class="sale__client-form" (ngSubmit)="addClient()">
+                <mat-form-field class="sale__input-wrap">
+                  <mat-label>Клиент</mat-label>
+                  <mat-select [(ngModel)]="selectedClient">
+                    <ng-container *ngFor="let client of clients">
+                      <mat-option [value]="client.id">{{client.FirstName}} {{client.LastName}}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
                 <div class="sale__client-info">
                   <mat-form-field class="sale__input">
                     <mat-label>Фамилия</mat-label>
