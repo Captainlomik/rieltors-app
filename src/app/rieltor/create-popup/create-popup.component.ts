@@ -22,7 +22,7 @@ export class CreatePopupComponent {
       "FirstName": new FormControl<string>(''),
       "MiddleName": new FormControl<string>(''),
       "LastName": new FormControl<string>(''),
-      "DealShare": new FormControl<number>(0)
+      "DealShare": new FormControl<number>(0, Validators.max(100))
     })
   }
   ngOnInit(): void {
