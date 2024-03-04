@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, filter, map, mergeMap, switchMap } from 'rxjs';
-import { Client, Purchase, PurchaseObject, Rieltor } from 'src/app/shared/interface';
+import { Client, Purchase, PurchaseObject, Rieltor, type } from 'src/app/shared/interface';
 import { RieltorService } from 'src/app/shared/services/rieltor.service';
 import { Location } from '@angular/common';
 import { PurchaseService } from 'src/app/shared/services/purchase.service';
@@ -19,6 +19,7 @@ export class RieltorDetailPageComponent implements OnInit {
   purchase!: Purchase
   arrayClients: Client[] = []
   object!: PurchaseObject
+  type = type
 
 
   constructor(private reiltorService: RieltorService,

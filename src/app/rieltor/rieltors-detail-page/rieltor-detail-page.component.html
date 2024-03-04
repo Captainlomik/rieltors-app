@@ -16,12 +16,13 @@
         <ng-container *ngFor="let client of arrayClients">
             <mat-card>
                 <mat-card-content>
-                    <h2 class="works__info-header">{{client.FirstName}} {{client.MiddleName}}{{client.LastName}}</h2>
+                    <h2 class="works__info-header">{{client.FirstName}} {{client.MiddleName}} {{client.LastName}}</h2>
                     <p class="works__info-text" *ngIf="client.Phone">Телефон: {{client.Phone}}</p>
                     <p *ngIf="client.Email" class="works__info-text" >Email: {{client.Email}}</p>
                     <mat-divider></mat-divider>
                     <h2 class="works__info-header">Объект</h2>
                     <div class="works__info-block" *ngIf="object">
+                        <p class="works__info-text" >{{type[object.type]}}</p>
                         <p class="works__info-text" *ngIf="object.area">Район: {{object.area}}</p>
                         <p class="works__info-text" *ngIf="object.floorMin">Этаж: {{object.floorMin}} - {{object.floorMax}}</p>
                         <p class="works__info-text" *ngIf="object.roomsMin">Количество комнат: {{object.roomsMin}} - {{object.roomsMax}}</p>

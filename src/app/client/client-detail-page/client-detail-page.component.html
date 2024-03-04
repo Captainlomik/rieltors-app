@@ -42,21 +42,21 @@
             <mat-card class="object__card">
                 <mat-card-content>
                     <div class="object__info">
-                        <div class="object__main">
-                            <p class="object__text">Тип объекта: {{object.type}}</p>
+                        <div class="object__main object__info-block">
+                            <p class="object__text">Тип объекта: {{type[object.type]}}</p>
                             <p class="object__text">Район: {{object.area}}</p>
                         </div>
-                        <div class="object__floors">
+                        <div *ngIf="object.floorMin" class="object__floors object__info-block" >
                             <p class="object__text">Этаж min: {{object.floorMin}}</p>
                             <p class="object__text">Этаж max: {{object.floorMax}}</p>
                         </div>
-                        <div class="object__rooms">
+                        <div *ngIf="object.roomsMin" class="object__rooms object__info-block">
                             <p class="object__text">Комнаты min: {{object.roomsMin}}</p>
                             <p class="object__text">Комнаты max: {{object.roomsMax}}</p>
                         </div>
-                        <div class="object__squares">
-                            <p class="object__text">Площадь min: {{object.squareMin}}</p>
-                            <p class="object__text">Площадь max: {{object.squareMax}}</p>
+                        <div *ngIf="object.squareMin" class="object__squares object__info-block">
+                            <p class="object__text">Площадь min: {{object.squareMin}} кв.м</p>
+                            <p class="object__text">Площадь max: {{object.squareMax}} кв.м</p>
                         </div>
                     </div>
                     <div class="object__price">
