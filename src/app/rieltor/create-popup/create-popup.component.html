@@ -1,5 +1,5 @@
 <form [formGroup]="rieltorForm" (ngSubmit)="editUser()" *ngIf="data; else elseBlock">
-    <h1 mat-dialog-title> Редактирование клиента</h1>
+    <h1 mat-dialog-title> Редактирование риелтора</h1>
     <div mat-dialog-content class="wrap">
       <mat-form-field>
         <mat-label>Фамилия</mat-label>
@@ -28,7 +28,7 @@
   
   <ng-template #elseBlock>
     <form [formGroup]="rieltorForm" (ngSubmit)="saveUser()">
-      <h1 mat-dialog-title>Создать клиента</h1>
+      <h1 mat-dialog-title>Создать риелтора</h1>
   
       <div mat-dialog-content class="wrap">
         <mat-form-field>
