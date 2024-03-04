@@ -12,7 +12,7 @@
                 <mat-select [(ngModel)]="selectedClient">
                   <ng-container *ngFor="let client of clients">
                     <mat-option (click)="selected()" [value]="client">{{client.FirstName}}
-                      {{client.LastName}}</mat-option>
+                      {{client.MiddleName}}</mat-option>
                   </ng-container>
                 </mat-select>
               </mat-form-field>
@@ -178,8 +178,8 @@
               <div *ngIf="client">
                 <h4>Клиент</h4>
                 <p>{{client.FirstName}} {{client.MiddleName}} {{client.LastName}}</p>
-                <p>Телефон: {{client.Email}}</p>
-                <p>Email:{{client.Phone}}</p>
+                <p *ngIf="client.Phone" >Телефон: {{client.Phone}}</p>
+                <p *ngIf="client.Email" >Email: {{client.Email}} </p>
               </div>
 
               <div *ngIf="object">
@@ -194,7 +194,7 @@
                   <mat-label>Риелтор</mat-label>
                   <mat-select [(ngModel)]="selectedRieltor">
                     <ng-container *ngFor="let rielter of rielters">
-                      <mat-option [value]="rielter.id">{{rielter.FirstName}}{{rielter.LastName}}</mat-option>
+                      <mat-option [value]="rielter.id">{{rielter.FirstName}} {{rielter.MiddleName}}</mat-option>
                     </ng-container>
                   </mat-select>
                 </mat-form-field>

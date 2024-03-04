@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BaseService } from "./base.service";
-import { Flat, FlatClass, House, HouseClass, Land, LandClass, Object } from "../interface";
+import { Flat, FlatClass, House, HouseClass, Land, LandClass, Object, ObjectType } from "../interface";
 import { Observable, map } from "rxjs";
 import { environment } from "src/environment";
 
@@ -16,7 +16,7 @@ export class ObjectService extends BaseService<FlatClass | HouseClass | LandClas
     return data.pipe(map(el => {
       let obj = el as Object
       switch (obj.type) {      
-        case 'Land':
+        case 'land':
           let data = el as Land
           return new LandClass(
             data['square'],
@@ -27,7 +27,7 @@ export class ObjectService extends BaseService<FlatClass | HouseClass | LandClas
             data['longitude'],
             data['latitude']
           )
-        case 'House':
+        case 'house':
           let house = el as House
           return new HouseClass(
             house['house'],
@@ -42,7 +42,7 @@ export class ObjectService extends BaseService<FlatClass | HouseClass | LandClas
             house['latitude'],
           )
 
-        case 'Flat':
+        case 'flat':
           let flat = el as Flat
           return new FlatClass(
             flat['house'],

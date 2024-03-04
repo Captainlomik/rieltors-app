@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Client, ObjectType, PurchaseObject, Rieltor } from 'src/app/shared/interface';
+import { Client, ObjectType, PurchaseObject, Rieltor, type } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { ClientService } from 'src/app/shared/services/client.service';
 import { ObjectService } from 'src/app/shared/services/object.service';
@@ -37,6 +37,8 @@ export class PurchaseComponent implements OnInit {
   selectedClient!: Client
   priceMin: number = 0
   priceMax: number = 0
+
+  type = type
 
 
   constructor(private clientService: ClientService,

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Flat, House, Land } from 'src/app/shared/interface';
+import { Flat, House, Land, type, ObjectType } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-small-sale-block',
@@ -8,10 +8,8 @@ import { Flat, House, Land } from 'src/app/shared/interface';
 })
 export class SmallSaleBlockComponent {
   @Input() object: Flat | House | Land | undefined
+  type = type
 
-  openPopup() {
-
-  }
 
   delObject(id: number) { }
 

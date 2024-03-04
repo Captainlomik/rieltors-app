@@ -61,6 +61,7 @@ export class SalePageComponent implements OnInit {
       "square": new FormControl<number>(0),
       "flat": new FormControl<number>(0),
       "frame": new FormControl<number>(0),
+      "type": new FormControl('')
     })
   }
 
@@ -104,6 +105,7 @@ export class SalePageComponent implements OnInit {
   }
 
   addObject() {
+    this.objectForm.controls['type'].setValue(this.typeOfHousing)
     this.objectService.post(this.objectForm.value).subscribe(
       el => {
         if (el) {

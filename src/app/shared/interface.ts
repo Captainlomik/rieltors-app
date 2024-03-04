@@ -21,7 +21,7 @@ export interface Object {
     street: string,
     longitude: number,
     latitude: number,
-    type: string
+    type: ObjectType
     getValues: () => objectValues[]
 }
 
@@ -30,8 +30,6 @@ export interface House extends Object {
     floors: number,
     rooms: number,
     square: number
-
-
 }
 
 export interface Flat extends Object {
@@ -52,7 +50,7 @@ export class HouseClass implements House {
         public rooms: number,
         public square: number,
         public id: number,
-        public type: string,
+        public type: ObjectType,
         public city: string,
         public street: string,
         public longitude: number,
@@ -76,7 +74,7 @@ export class FlatClass implements Flat {
         public rooms: number,
         public square: number,
         public id: number,
-        public type: string,
+        public type: ObjectType,
         public city: string,
         public street: string,
         public longitude: number,
@@ -96,7 +94,7 @@ export class FlatClass implements Flat {
 export class LandClass implements Land {
     constructor(public square: number,
         public id: number,
-        public type: string,
+        public type: ObjectType,
         public city: string,
         public street: string,
         public longitude: number,
@@ -143,7 +141,7 @@ export interface Purchase {
 }
 
 export const type = {
-    "land": "Земля",
-    "house": "Дом",
-    "flat": "Квартира"
+    land: "Земля",
+    house: "Дом",
+    flat: "Квартира"
 }
