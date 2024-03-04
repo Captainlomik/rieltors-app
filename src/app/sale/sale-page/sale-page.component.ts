@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router} from "@angular/router";
 import { Client, Flat, House, Land, Rieltor } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { ClientService } from 'src/app/shared/services/client.service';
@@ -38,7 +39,8 @@ export class SalePageComponent implements OnInit {
     private objectService: ObjectService,
     private rielterService: RieltorService,
     private offerService: OffersService,
-    private alert: AlertService) {
+    private alert: AlertService,
+    private router: Router) {
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>('', Validators.required),
       "MiddleName": new FormControl<string>('', Validators.required),
@@ -117,14 +119,15 @@ export class SalePageComponent implements OnInit {
     this.rielterService.get().subscribe(
       el => {
         this.rielters = el
-
       }
     )
   }
 
   getClient() {
     this.clientService.get().subscribe(
-      el => { this.clients = el }
+      el => {
+        this.clients = el;
+      }
     )
   }
 
@@ -135,8 +138,25 @@ export class SalePageComponent implements OnInit {
       rieltorId: this.selectedRieltor,
       price: this.price
     }).subscribe(
-      el => this.alert.success('Добавлено')
+      el => {
+        this.alert.success('Добавлено');
+        this.router.navigate(["/clients"])
+      }
     )
+  }
+
+  selected() {
+    if (this.selectedClient) {
+      this.addClientFlag = true
+      this.clientId = this.selectedClient.id
+      this.clientForm.setValue({
+        FirstName: this.selectedClient.FirstName,
+        MiddleName: this.selectedClient.MiddleName,
+        LastName: this.selectedClient.LastName,
+        Phone: this.selectedClient.Phone,
+        Email: this.selectedClient.Email
+      })
+    }
   }
 
 }

@@ -6,16 +6,16 @@
         <div *ngFor="let tab of tabs; let index1 = index">
           <mat-tab [label]="tab">
 
-            <div *ngIf="index1===0" class="tab__content">
-              <form [formGroup]="clientForm" class="sale__client-form" (ngSubmit)="addClient()">
-                <mat-form-field class="sale__input-wrap">
+            <div *ngIf="index1===0" class="tab__content"><mat-form-field class="sale__input-wrap">
                   <mat-label>Клиент</mat-label>
                   <mat-select [(ngModel)]="selectedClient">
                     <ng-container *ngFor="let client of clients">
-                      <mat-option [value]="client.id">{{client.FirstName}} {{client.LastName}}</mat-option>
+                      <mat-option (click)="selected()" [value]="client">{{client.FirstName}} {{client.LastName}}</mat-option>
                     </ng-container>
                   </mat-select>
                 </mat-form-field>
+              <form [formGroup]="clientForm" class="sale__client-form" (ngSubmit)="addClient()">
+                
                 <div class="sale__client-info">
                   <mat-form-field class="sale__input">
                     <mat-label>Фамилия</mat-label>
@@ -191,7 +191,7 @@
                 <mat-form-field class="sale__input-wrap">
                   <mat-label>Риелтор</mat-label>
                   <mat-select [(ngModel)]="selectedRieltor">
-                    <ng-container *ngFor="let rielter of rielters">
+                    <ng-container *ngFor="let rielter of rielters" >
                       <mat-option [value]="rielter.id">{{rielter.FirstName}}{{rielter.LastName}}</mat-option>
                     </ng-container>
                   </mat-select>
