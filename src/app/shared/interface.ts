@@ -30,7 +30,7 @@ export interface House extends Object {
     floors: number,
     rooms: number,
     square: number
-   
+
 
 }
 
@@ -142,3 +142,8 @@ export interface Purchase {
     priceMax: number
 }
 
+export const type = {
+    "land": "Земля",
+    "house": "Дом",
+    "flat": "Квартира"
+}
