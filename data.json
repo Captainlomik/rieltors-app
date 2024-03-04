@@ -31,21 +31,37 @@
       "Phone": "",
       "Email": "tes1@mail.ru",
       "id": 4
+    },
+    {
+      "FirstName": "Иванова",
+      "MiddleName": "Дарья",
+      "LastName": "Николаевна",
+      "Phone": "",
+      "Email": "dar@mail.ru",
+      "id": 5
+    },
+    {
+      "FirstName": "Сидоров",
+      "MiddleName": "Иван",
+      "LastName": "Иван",
+      "Phone": "8 983 234 23 43",
+      "Email": "",
+      "id": 6
     }
   ],
   "rieltors": [
     {
       "FirstName": "Иванов",
       "MiddleName": "Макар",
-      "LastName": "Макар",
+      "LastName": "Макарович",
       "DealShare": "14",
       "id": 4
     },
     {
       "FirstName": "Петров",
       "MiddleName": "Петр",
-      "LastName": "Сергеевич",
-      "DealShare": "15",
+      "LastName": "Петр",
+      "DealShare": "10",
       "id": 5
     },
     {
@@ -116,6 +132,21 @@
       "frame": 0,
       "type": "house",
       "id": 5
+    },
+    {
+      "city": "Москва",
+      "street": "Малая Волхонка",
+      "longitude": 0,
+      "latitude": 0,
+      "house": 0,
+      "floor": 0,
+      "floors": 0,
+      "rooms": 0,
+      "square": "1000",
+      "flat": 0,
+      "frame": 0,
+      "type": "land",
+      "id": 6
     }
   ],
   "offers": [
@@ -139,6 +170,13 @@
       "rieltorId": 5,
       "price": "1000000",
       "id": 4
+    },
+    {
+      "clientId": 5,
+      "objectId": 6,
+      "rieltorId": 5,
+      "price": "1000000",
+      "id": 5
     }
   ],
   "purchaseObjects": [
@@ -174,6 +212,17 @@
       "roomsMax": "5",
       "floorMin": "1",
       "floorMax": "3"
+    },
+    {
+      "id": 4,
+      "type": "house",
+      "area": "СВАО",
+      "squareMin": "100",
+      "squareMax": "300",
+      "roomsMin": "1",
+      "roomsMax": "5",
+      "floorMin": "1",
+      "floorMax": "3"
     }
   ],
   "purchases": [
@@ -192,6 +241,14 @@
       "priceMin": "2000000",
       "priceMax": "2500000",
       "id": 2
+    },
+    {
+      "clientId": 5,
+      "purchaseObjectId": 4,
+      "rieltorId": 5,
+      "priceMin": "2000000",
+      "priceMax": "25000000",
+      "id": 3
     }
   ]
 }
