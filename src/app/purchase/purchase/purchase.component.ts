@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Client, ObjectType, PurchaseObject, Rieltor } from 'src/app/shared/interface';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { ClientService } from 'src/app/shared/services/client.service';
@@ -14,7 +15,7 @@ import { RieltorService } from 'src/app/shared/services/rieltor.service';
   templateUrl: './purchase.component.html',
   styleUrls: ['./purchase.component.scss']
 })
-export class PurchaseComponent {
+export class PurchaseComponent implements OnInit {
   title: string = 'Покупка'
 
 
@@ -30,17 +31,21 @@ export class PurchaseComponent {
   client: Client | undefined
   object: PurchaseObject | undefined
   rielters: Rieltor[] | undefined
+  clients: Client[] | undefined
 
   selectedRieltor: any
+  selectedClient!: Client
   priceMin: number = 0
   priceMax: number = 0
 
 
   constructor(private clientService: ClientService,
     private purchaseObjectService: PurchaseObjectService,
-    private purchaseService:PurchaseService,
+    private purchaseService: PurchaseService,
     private rielterService: RieltorService,
-    private alert: AlertService) {
+    private alert: AlertService,
+    private router: Router) {
+
     this.clientForm = new FormGroup({
       "FirstName": new FormControl<string>('', Validators.required),
       "MiddleName": new FormControl<string>('', Validators.required),
@@ -58,6 +63,10 @@ export class PurchaseComponent {
       "floorMin": new FormControl<number | null>(null),
       "floorMax": new FormControl<number | null>(null),
     })
+  }
+
+  ngOnInit(): void {
+    this.getClient()
   }
 
 
@@ -125,14 +134,39 @@ export class PurchaseComponent {
   }
 
   createPurchase() {
-      this.purchaseService.post({
-        clientId: this.clientId,
-        purchaseObjectId: this.objectId,
-        rieltorId: this.selectedRieltor,
-        priceMin: this.priceMin, 
-        priceMax: this.priceMax
-      }).subscribe(
-        el => this.alert.success('Добавлено')
-      )
+    this.purchaseService.post({
+      clientId: this.clientId,
+      purchaseObjectId: this.objectId,
+      rieltorId: this.selectedRieltor,
+      priceMin: this.priceMin,
+      priceMax: this.priceMax
+    }).subscribe(
+      el => {
+        this.alert.success('Добавлено'),
+        this.router.navigate(["/clients"])
+      }
+    )
+  }
+
+  getClient() {
+    this.clientService.get().subscribe(
+      el => {
+        this.clients = el;
+      }
+    )
+  }
+
+  selected() {
+    if (this.selectedClient) {
+      this.addClientFlag = true
+      this.clientId = this.selectedClient.id
+      this.clientForm.setValue({
+        FirstName: this.selectedClient.FirstName,
+        MiddleName: this.selectedClient.MiddleName,
+        LastName: this.selectedClient.LastName,
+        Phone: this.selectedClient.Phone,
+        Email: this.selectedClient.Email
+      })
+    }
   }
 }

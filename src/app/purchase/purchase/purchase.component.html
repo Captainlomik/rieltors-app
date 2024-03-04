@@ -7,6 +7,15 @@
                     <mat-tab [label]="tab">
 
                         <div *ngIf="index1===0" class="tab__content">
+                            <mat-form-field class="sale__input-wrap">
+                                <mat-label>Клиент</mat-label>
+                                <mat-select [(ngModel)]="selectedClient">
+                                    <ng-container *ngFor="let client of clients">
+                                        <mat-option (click)="selected()" [value]="client">{{client.FirstName}}
+                                            {{client.LastName}}</mat-option>
+                                    </ng-container>
+                                </mat-select>
+                            </mat-form-field>
                             <form [formGroup]="clientForm" class="purchase__client-form" (ngSubmit)="addClient()">
                                 <div class="purchase__client-info">
                                     <mat-form-field class="purchase__input-wrap">
@@ -78,7 +87,7 @@
                                                     </mat-form-field>
                                                     <mat-form-field class="purchase__input-wrap input__big">
                                                         <mat-label>Этаж по</mat-label>
-                                                        <input matInput  formControlName="floorMax">
+                                                        <input matInput formControlName="floorMax">
                                                     </mat-form-field>
 
                                                 </div>
@@ -159,8 +168,8 @@
 
                             <div *ngIf="object">
                                 <h4>Объект</h4>
-                               <p>{{object.floorMin}}</p>
-                            <p>{{object.type}}</p>
+                                <p>{{object.floorMin}}</p>
+                                <p>{{object.type}}</p>
                             </div>
 
                             <div class="offer__inputs">
