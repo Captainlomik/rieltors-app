@@ -9,155 +9,189 @@
       "id": 1
     },
     {
-      "FirstName": "Илья",
-      "MiddleName": "Белов ",
-      "LastName": "Беловgg",
-      "Phone": "8 982 43 23",
-      "Email": "nastiy248@mail.ru",
+      "FirstName": "Малика",
+      "MiddleName": "Ирина",
+      "LastName": "Аннатольевна",
+      "Phone": "8 982 234 23 43",
+      "Email": "anna@mail.ru",
+      "id": 2
+    },
+    {
+      "FirstName": "Белов",
+      "MiddleName": "Илья",
+      "LastName": "Александрович",
+      "Phone": "",
+      "Email": "test@mail.ru",
+      "id": 3
+    },
+    {
+      "FirstName": "Белов",
+      "MiddleName": "Илья",
+      "LastName": "Петрович",
+      "Phone": "",
+      "Email": "tes1@mail.ru",
       "id": 4
-    },
-    {
-      "FirstName": "Иванов",
-      "MiddleName": "Иван ",
-      "LastName": "Сергеевич",
-      "Phone": "8 985 782 43 23",
-      "Email": "nastiy248@mail.ru",
-      "id": 5
-    },
-    {
-      "FirstName": "Иванов",
-      "MiddleName": "Ива",
-      "LastName": "Ива",
-      "Phone": "8 984 234 23 43",
-      "Email": "ivan@mail.ru",
-      "id": 15
-    },
-    {
-      "FirstName": "Иванов",
-      "MiddleName": "Иван",
-      "LastName": "Иванович",
-      "Phone": "8 985 782 95 58",
-      "Email": "tes@mail.ru",
-      "id": 16
-    },
-    {
-      "FirstName": "weqwe",
-      "MiddleName": "qweqwe",
-      "LastName": "",
-      "Phone": "",
-      "Email": "rewrr@naksd.ru",
-      "id": 17
-    },
-    {
-      "FirstName": "ыаыва",
-      "MiddleName": "ываыва",
-      "LastName": "",
-      "Phone": "",
-      "Email": "tesesr@mail.ru",
-      "id": 18
     }
   ],
   "rieltors": [
     {
-      "FirstName": "kjeeee",
-      "MiddleName": "sdfs",
-      "LastName": "hkjkjhh",
-      "DealShare": "302",
+      "FirstName": "Иванов",
+      "MiddleName": "Макар",
+      "LastName": "Макар",
+      "DealShare": "14",
       "id": 4
     },
     {
-      "FirstName": "rr",
-      "MiddleName": "rr",
-      "LastName": "rr44",
-      "DealShare": "455",
+      "FirstName": "Петров",
+      "MiddleName": "Петр",
+      "LastName": "Сергеевич",
+      "DealShare": "15",
       "id": 5
+    },
+    {
+      "FirstName": "Анина",
+      "MiddleName": "Анна",
+      "LastName": "Игоревна",
+      "DealShare": "8",
+      "id": 6
     }
   ],
   "objects": [
     {
-      "city": "rerere",
-      "street": "ereer",
-      "longitude": "323123",
-      "latitude": "232312",
-      "house": "1",
-      "floor": "2",
-      "floors": "10",
+      "city": "Иваново",
+      "street": "Малая юбилейная",
+      "longitude": "123123123",
+      "latitude": "123342234",
+      "house": 0,
+      "floor": 0,
+      "floors": 0,
       "rooms": 0,
-      "square": "212",
-      "flat": "23",
-      "frame": "21",
-      "type": "Flat",
-      "id": 1
+      "square": "130",
+      "flat": 0,
+      "frame": 0,
+      "type": "land",
+      "id": 2
     },
     {
-      "city": "Мосва",
-      "street": "ываыва",
+      "city": "Обнинск",
+      "street": "Московская",
       "longitude": 0,
       "latitude": 0,
       "house": 0,
       "floor": 0,
       "floors": 0,
       "rooms": 0,
-      "square": 0,
+      "square": "300",
       "flat": 0,
-      "frame": "12",
-      "type": "Land",
-      "id": 5
+      "frame": 0,
+      "type": "land",
+      "id": 3
     },
     {
-      "city": "Москва",
-      "street": "Рубинштейна",
-      "longitude": "1",
-      "latitude": "1",
-      "house": "1",
-      "floor": "1",
-      "floors": "12",
-      "rooms": "`1",
-      "square": "1",
-      "flat": "12",
-      "frame": "123",
-      "type": "Flat",
-      "id": 6
-    },
-    {
-      "city": "erer",
-      "street": "ererrer",
-      "longitude": "10",
-      "latitude": "10",
+      "city": "Зеленоград",
+      "street": "Строителей",
+      "longitude": 0,
+      "latitude": 0,
       "house": 0,
       "floor": 0,
       "floors": 0,
       "rooms": 0,
-      "square": "10",
+      "square": "100",
       "flat": 0,
       "frame": 0,
-      "type": "Land",
-      "id": 7
+      "type": "land",
+      "id": 4
+    },
+    {
+      "city": "Зеленоград",
+      "street": "Строителей",
+      "longitude": 0,
+      "latitude": 0,
+      "house": "1",
+      "floor": 0,
+      "floors": "8",
+      "rooms": "3",
+      "square": "100",
+      "flat": 0,
+      "frame": 0,
+      "type": "house",
+      "id": 5
     }
   ],
   "offers": [
     {
-      "clientId": 16,
-      "objectId": 6,
+      "clientId": 2,
+      "objectId": 3,
       "rieltorId": 5,
-      "price": "123123",
-      "id": 1
-    },
-    {
-      "clientId": 16,
-      "objectId": 5,
-      "rieltorId": 5,
-      "price": "123123",
+      "price": "12000",
       "id": 2
     },
     {
-      "clientId": 17,
-      "objectId": 7,
+      "clientId": 3,
+      "objectId": 4,
       "rieltorId": 4,
-      "price": "212312312",
+      "price": "10000",
       "id": 3
+    },
+    {
+      "clientId": 4,
+      "objectId": 5,
+      "rieltorId": 5,
+      "price": "1000000",
+      "id": 4
     }
   ],
-  "purchaseObjects": [],
-  "purchases": []
+  "purchaseObjects": [
+    {
+      "id": 1,
+      "type": "land",
+      "area": "Марфино",
+      "squareMin": "80",
+      "squareMax": "100",
+      "roomsMin": null,
+      "roomsMax": null,
+      "floorMin": null,
+      "floorMax": null
+    },
+    {
+      "id": 2,
+      "type": "house",
+      "area": "СВАО",
+      "squareMin": "100",
+      "squareMax": "300",
+      "roomsMin": "2",
+      "roomsMax": "5",
+      "floorMin": "2",
+      "floorMax": "3"
+    },
+    {
+      "id": 3,
+      "type": "house",
+      "area": "Дубна",
+      "squareMin": "100",
+      "squareMax": "300",
+      "roomsMin": "2",
+      "roomsMax": "5",
+      "floorMin": "1",
+      "floorMax": "3"
+    }
+  ],
+  "purchases": [
+    {
+      "clientId": 1,
+      "purchaseObjectId": 1,
+      "rieltorId": 4,
+      "priceMin": "10000",
+      "priceMax": "200000",
+      "id": 1
+    },
+    {
+      "clientId": 4,
+      "purchaseObjectId": 3,
+      "rieltorId": 4,
+      "priceMin": "2000000",
+      "priceMax": "2500000",
+      "id": 2
+    }
+  ]
 }
