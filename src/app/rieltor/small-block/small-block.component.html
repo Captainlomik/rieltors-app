@@ -2,7 +2,7 @@
     <div class="block-wrap">
       <a class="block__info" [routerLink]="['/rieltor', rieltor!.id]">
           <p class="block__info-name">{{rieltor?.FirstName}} {{rieltor?.MiddleName}} {{rieltor?.LastName}}</p>
-          <p class="block__info-dealShare">{{rieltor?.DealShare}}</p>
+          <p class="block__info-dealShare">{{rieltor?.DealShare}}%</p>
       </a>
       <div class="block__btns">
         <button class="block__btns-btn"><img class="block__btns-img" src="./assets/Pencil.png" alt="edit" (click)="openPopup()"></button>
